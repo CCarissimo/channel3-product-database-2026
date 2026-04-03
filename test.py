@@ -8,6 +8,7 @@ from pathlib import Path
 from pydantic import BaseModel
 from models import FirstQueryProduct, Product, Category
 from taxonomy import load_or_build_tree
+from html_preprocessing import preprocess
 
 CATEGORY_MODEL = "google/gemini-2.0-flash-lite-001"
 EXTRACTION_MODEL = "google/gemini-2.5-flash-lite"
@@ -69,7 +70,7 @@ async def extract_product(html_path: str) -> tuple[Product, list[dict]]:
     """Extract a Product from an HTML file, including category discovery.
     Returns (product, list_of_all_usage_dicts)."""
     with open(html_path, "r") as f:
-        html_content = f.read()
+        html_content = preprocess(f.read())
 
     schema_description = FirstQueryProduct.model_json_schema()
 

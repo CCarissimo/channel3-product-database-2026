@@ -43,3 +43,15 @@ class Product(BaseModel):
     brand: str
     colors: list[str]
     variants: list[Any] # TODO (@dev): Define variant model
+
+# Added this class for our first query, because we don't know the category yet, but we still want to get a structured response. 
+class FirstQueryProduct(BaseModel):
+    name: str
+    price: Price
+    description: str
+    key_features: list[str]
+    image_urls: list[str]
+    video_url: str | None = None
+    brand: str
+    colors: list[str]
+    variants: list[Any] # TODO (@dev): Define variant model

@@ -1,5 +1,7 @@
 .env
 __pycache__/
 
+taxonomy_tree.json
+
 # don't assume they're using UV
 uv.lock

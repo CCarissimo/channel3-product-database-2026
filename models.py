@@ -30,7 +30,13 @@ class Price(BaseModel):
     # If a product is on sale, this is the original price
     compare_at_price: float | None = None
 
-# This is the final product schema that you need to output. 
+# Models to handle variants
+# examples: colors, sizes, fit
+class SingleVariant(BaseModel):
+    name: str
+    options: list[str]
+
+# This is the final product schema that you need to output.
 # You may add additional models as needed.
 class Product(BaseModel):
     name: str
@@ -42,9 +48,9 @@ class Product(BaseModel):
     category: Category
     brand: str
     colors: list[str]
-    variants: list[Any] # TODO (@dev): Define variant model
+    variants: list[SingleVariant]
 
-# Added this class for our first query, because we don't know the category yet, but we still want to get a structured response. 
+# Added this class for our first query, because we don't know the category yet, but we still want to get a structured response.
 class FirstQueryProduct(BaseModel):
     name: str
     price: Price
@@ -54,4 +60,4 @@ class FirstQueryProduct(BaseModel):
     video_url: str | None = None
     brand: str
     colors: list[str]
-    variants: list[Any] # TODO (@dev): Define variant model
+    variants: list[SingleVariant]

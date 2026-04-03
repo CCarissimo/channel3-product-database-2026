@@ -81,9 +81,14 @@ async def extract_product(html_path: str) -> tuple[Product, list[dict]]:
                 "Extract the product information from the following HTML page.\n\n"
                 "Output must conform to this schema:\n"
                 f"{schema_description}\n\n"
-                "Important: All numeric fields (price, compare_at_price) must be plain numbers, not strings. "
+                "Important:\n"
+                "- All numeric fields (price, compare_at_price) must be plain numbers, not strings. "
                 "Do not include currency symbols or text in numeric fields. "
-                "Currency should be a separate string field (e.g. 'USD', 'EUR')."
+                "Currency should be a separate string field (e.g. 'USD', 'EUR').\n"
+                "- Variants represent product options a customer can choose from, such as sizes, colors, or fits. "
+                "Each variant has a 'name' (e.g. 'Size', 'Color', 'Fit') and 'options' (e.g. ['S', 'M', 'L', 'XL']). "
+                "Only include variants that are explicitly present on the product page. "
+                "If no variants are found, return an empty list."
             )},
             {"role": "user", "content": html_content},
         ],

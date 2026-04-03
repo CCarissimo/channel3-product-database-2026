@@ -6,7 +6,7 @@ from pydantic import BaseModel
 async def hello_world():
     class HelloWorldResponse(BaseModel):
         message: str
-    response = await ai.responses(
+    response, usage = await ai.responses(
         "gpt-5-nano",
         [{"role": "system", "content": "You are a helpful assistant that outputs everything in reverse."},
          {"role": "user", "content": "Say 'hello world'"}],

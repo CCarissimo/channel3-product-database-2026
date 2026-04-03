@@ -39,12 +39,12 @@ def _get_client() -> AsyncOpenAI:
     return AsyncOpenAI(base_url=OPENROUTER_BASE_URL, api_key=api_key)
 
 
-def _log_usage(response) -> None:
-    """Log token usage and cost extrapolation for 1M queries."""
+def _log_usage(response) -> dict:
+    """Log token usage and cost extrapolation for 1M queries. Returns usage dict."""
     usage = getattr(response, "usage", None)
     if usage is None:
         logger.warning("No usage data in response")
-        return
+        return {"model": "unknown", "input_tokens": 0, "output_tokens": 0, "reasoning_tokens": 0, "cost": 0.0}
 
     model = getattr(response, "model", "unknown")
     input_tokens = getattr(usage, "input_tokens", 0)
@@ -78,6 +78,14 @@ def _log_usage(response) -> None:
         f"10M queries: ${million_cost * 10:,.2f}"
     )
 
+    return {
+        "model": model,
+        "input_tokens": input_tokens,
+        "output_tokens": output_tokens,
+        "reasoning_tokens": reasoning_tokens,
+        "cost": single_total,
+    }
+
 
 async def responses(
     model: str,
@@ -104,8 +112,8 @@ async def responses(
             text_format=text_format,
             **kwargs,
         )
-        _log_usage(response)
-        return response.output_parsed
+        usage = _log_usage(response)
+        return response.output_parsed, usage
     else:
         # Use .create() for regular responses
         response = await client.responses.create(
@@ -113,5 +121,5 @@ async def responses(
             input=input,
             **kwargs,
         )
-        _log_usage(response)
-        return response
+        usage = _log_usage(response)
+        return response, usage

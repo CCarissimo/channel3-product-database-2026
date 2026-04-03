@@ -88,6 +88,7 @@ async def extract_product(html_path: str) -> tuple[Product, list[dict]]:
             {"role": "user", "content": html_content},
         ],
         text_format=FirstQueryProduct,
+        max_output_tokens=4096,
     )
     extraction_usage["step"] = "product_extraction"
     all_usage = [extraction_usage]

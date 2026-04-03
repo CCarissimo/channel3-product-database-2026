@@ -54,14 +54,24 @@ async def find_category(name: str, description: str) -> str:
     return full_category
 
 
-async def test_ace():
-    with open("./data/ace.html", "r") as f:
+async def extract_product(html_path: str) -> Product:
+    """Extract a Product from an HTML file, including category discovery."""
+    with open(html_path, "r") as f:
         html_content = f.read()
+
+    schema_description = FirstQueryProduct.model_json_schema()
 
     product = await ai.responses(
         model="google/gemini-2.5-flash-lite",
         input=[
-            {"role": "system", "content": "Extract the product information from the following HTML page."},
+            {"role": "system", "content": (
+                "Extract the product information from the following HTML page.\n\n"
+                "Output must conform to this schema:\n"
+                f"{schema_description}\n\n"
+                "Important: All numeric fields (price, compare_at_price) must be plain numbers, not strings. "
+                "Do not include currency symbols or text in numeric fields. "
+                "Currency should be a separate string field (e.g. 'USD', 'EUR')."
+            )},
             {"role": "user", "content": html_content},
         ],
         text_format=FirstQueryProduct,
@@ -79,9 +89,24 @@ async def test_ace():
 
     print(f"\nFinal category: {category}")
     print(f"\n{final_product.model_dump_json(indent=2)}")
+    return final_product
+
+
+async def main():
+    from pathlib import Path
+
+    data_dir = Path("./data")
+    html_files = sorted(data_dir.glob("*.html"))
+
+    print(f"Found {len(html_files)} HTML files to process\n")
+    for html_file in html_files:
+        print(f"\n{'='*60}")
+        print(f"Processing: {html_file.name}")
+        print(f"{'='*60}")
+        await extract_product(str(html_file))
 
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
-    asyncio.run(test_ace())
+    asyncio.run(main())
     

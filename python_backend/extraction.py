@@ -89,7 +89,8 @@ async def extract_product(html_path: str) -> tuple[Product, list[dict]]:
         {"role": "user", "content": html_content},
     ]
 
-    from pydantic import ValidationError
+    from pydantic import ValidationError as PydanticValidationError
+    from pydantic_core import ValidationError as PydanticCoreValidationError
     for attempt in range(MAX_RETRIES):
         try:
             product, extraction_usage = await ai.responses(
@@ -99,7 +100,7 @@ async def extract_product(html_path: str) -> tuple[Product, list[dict]]:
                 max_output_tokens=16384,
             )
             break
-        except ValidationError as e:
+        except (PydanticValidationError, PydanticCoreValidationError) as e:
             if attempt < MAX_RETRIES - 1:
                 print(f"  Extraction attempt {attempt + 1} failed (truncated output), retrying...")
                 continue

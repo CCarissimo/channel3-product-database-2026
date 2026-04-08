@@ -1,0 +1,108 @@
+{
+  "product": {
+    "name": "Pilar Floor Lamp - White Terrazzo",
+    "price": {
+      "price": 349.0,
+      "currency": "USD",
+      "compare_at_price": null
+    },
+    "description": "The Pilar is a shining light atop a tall, slender terrazzo base, emitting a warm glow from its beacon-like fabric-wrapped shade. If you're looking for that statement piece, you're in the right place\u2014the Pilar stands four and a half feet tall, shining light across your home.",
+    "key_features": [
+      "Terrazzo base with a fabric shade",
+      "E26 7W LED bulb included"
+    ],
+    "image_urls": [
+      "https://cdn-images.article.com/products/SKU25289/2890x1500/image154290.jpg?w=320&q=80&fit=max",
+      "https://cdn-images.article.com/products/SKU25289/2890x1500/image154289.jpg?w=320&q=80&fit=max",
+      "https://cdn-images.article.com/products/SKU25289/2890x1500/image169693.jpg?w=320&q=80&fit=max",
+      "https://cdn-images.article.com/products/SKU25289/2890x1500/image154288.jpg?w=320&q=80&fit=max",
+      "https://cdn-images.article.com/products/SKU25289/2890x1500/image154286.jpg?w=320&q=80&fit=max",
+      "https://cdn-images.article.com/products/SKU25289/2890x1500/image154287.jpg?w=320&q=80&fit=max",
+      "https://cdn-images.article.com/products/SKU25289/2890x1500/image154291.jpg?w=320&q=80&fit=max",
+      "https://cdn-images.article.com/products/SKU25289/2890x1500/image154292.jpg?w=320&q=80&fit=max",
+      "https://cdn-images.article.com/products/SKU25289/2890x1500/image154293.jpg?w=320&q=80&fit=max",
+      "https://cdn-images.article.com/products/SKU25289/2890x1500/image154295.jpg?w=320&q=80&fit=max",
+      "https://cdn-images.article.com/products/SKU25289/2890x1500/image154294.jpg?w=320&q=80&fit=max",
+      "https://cdn-images.article.com/products/SKU25289/2890x1500/image154296.jpg?w=320&q=80&fit=max"
+    ],
+    "video_url": null,
+    "category": {
+      "name": "Furniture > Tables > Accent Tables > End Tables"
+    },
+    "brand": "Article",
+    "colors": [
+      "White Terrazzo"
+    ],
+    "variants": []
+  },
+  "metrics": {
+    "extraction": {
+      "num_calls": 1,
+      "input_tokens": 6615,
+      "output_tokens": 910,
+      "cost": 0.0010255000000000002,
+      "model": "google/gemini-2.5-flash-lite"
+    },
+    "taxonomy": {
+      "num_calls": 5,
+      "input_tokens": 764,
+      "output_tokens": 57,
+      "cost": 7.439999999999999e-05,
+      "model": "google/gemini-2.0-flash-lite-001"
+    },
+    "total_input_tokens": 7379,
+    "total_output_tokens": 967,
+    "total_cost": 0.0010999000000000002,
+    "num_api_calls": 6,
+    "calls": [
+      {
+        "model": "google/gemini-2.5-flash-lite",
+        "input_tokens": 6615,
+        "output_tokens": 910,
+        "reasoning_tokens": 0,
+        "cost": 0.0010255000000000002,
+        "step": "product_extraction"
+      },
+      {
+        "model": "google/gemini-2.0-flash-lite-001",
+        "input_tokens": 194,
+        "output_tokens": 11,
+        "reasoning_tokens": 0,
+        "cost": 1.785e-05,
+        "step": "category_level_0"
+      },
+      {
+        "model": "google/gemini-2.0-flash-lite-001",
+        "input_tokens": 214,
+        "output_tokens": 11,
+        "reasoning_tokens": 0,
+        "cost": 1.935e-05,
+        "step": "category_level_1"
+      },
+      {
+        "model": "google/gemini-2.0-flash-lite-001",
+        "input_tokens": 136,
+        "output_tokens": 12,
+        "reasoning_tokens": 0,
+        "cost": 1.3799999999999998e-05,
+        "step": "category_level_2"
+      },
+      {
+        "model": "google/gemini-2.0-flash-lite-001",
+        "input_tokens": 110,
+        "output_tokens": 11,
+        "reasoning_tokens": 0,
+        "cost": 1.155e-05,
+        "step": "category_level_3"
+      },
+      {
+        "model": "google/gemini-2.0-flash-lite-001",
+        "input_tokens": 110,
+        "output_tokens": 12,
+        "reasoning_tokens": 0,
+        "cost": 1.185e-05,
+        "step": "category_level_3"
+      }
+    ]
+  }
+}

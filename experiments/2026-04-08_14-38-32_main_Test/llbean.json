@@ -1,0 +1,128 @@
+{
+  "product": {
+    "name": "Men's Carefree Unshrinkable Tee, Traditional Fit, Henley",
+    "price": {
+      "price": 29.95,
+      "currency": "USD",
+      "compare_at_price": null
+    },
+    "description": "Made of soft cotton that resists wrinkles, shrinking, fading and pilling, our resilient henley keeps its shape wash after wash. We've put our Unshrinkable Carefree Tees to the test, in the lab and in the field. What's more, the 100% cotton fabric resists wrinkles, fading, pilling and shrinking, so our tee keeps its true-to-size fit while maintaining its comfort and softness. It's been a customer favorite for years.",
+    "key_features": [
+      "Resists wrinkles, shrinking, fading, and pilling",
+      "Keeps its shape after washing",
+      "Soft cotton fabric",
+      "Traditional Fit: Relaxed through the chest, sleeve and waist",
+      "Durable double-needle stitching"
+    ],
+    "image_urls": [
+      "https://cdni.llbean.net/is/image/wim/224626_1176_41?hei=196&wid=170&defaultImage=llbprod/224626_1176_41",
+      "https://cdni.llbean.net/is/image/wim/224626_1176_44?hei=196&wid=170&defaultImage=llbprod/224626_0_44",
+      "https://cdni.llbean.net/is/image/wim/224626_1176_45?hei=196&wid=170&defaultImage=llbprod/224626_0_45",
+      "https://cdni.llbean.net/is/image/wim/224626_1176_46?hei=196&wid=170&defaultImage=llbprod/224626_0_46",
+      "https://cdni.llbean.net/is/image/wim/224626_1176_47?hei=196&wid=170&defaultImage=llbprod/224626_0_47",
+      "https://cdni.llbean.net/is/image/wim/224626_1176_48?hei=196&wid=170&defaultImage=llbprod/224626_0_48"
+    ],
+    "video_url": null,
+    "category": {
+      "name": "Apparel & Accessories > Clothing > Shirts & Tops"
+    },
+    "brand": "L.L.Bean",
+    "colors": [
+      "Charcoal Heather",
+      "Blue",
+      "Black",
+      "Navy",
+      "Light Grey",
+      "Red",
+      "Green",
+      "Yellow"
+    ],
+    "variants": [
+      {
+        "name": "Color",
+        "options": [
+          "Charcoal Heather",
+          "Blue",
+          "Black",
+          "Navy",
+          "Light Grey",
+          "Red",
+          "Green",
+          "Yellow"
+        ]
+      },
+      {
+        "name": "Item",
+        "options": [
+          "Regular",
+          "Tall"
+        ]
+      },
+      {
+        "name": "Size",
+        "options": [
+          "Small",
+          "Medium",
+          "Large",
+          "X-Large",
+          "XX-Large",
+          "XXX-Large"
+        ]
+      }
+    ]
+  },
+  "metrics": {
+    "extraction": {
+      "num_calls": 1,
+      "input_tokens": 6192,
+      "output_tokens": 888,
+      "cost": 0.0009744,
+      "model": "google/gemini-2.5-flash-lite"
+    },
+    "taxonomy": {
+      "num_calls": 3,
+      "input_tokens": 647,
+      "output_tokens": 38,
+      "cost": 5.9925e-05,
+      "model": "google/gemini-2.0-flash-lite-001"
+    },
+    "total_input_tokens": 6839,
+    "total_output_tokens": 926,
+    "total_cost": 0.001034325,
+    "num_api_calls": 4,
+    "calls": [
+      {
+        "model": "google/gemini-2.5-flash-lite",
+        "input_tokens": 6192,
+        "output_tokens": 888,
+        "reasoning_tokens": 0,
+        "cost": 0.0009744,
+        "step": "product_extraction"
+      },
+      {
+        "model": "google/gemini-2.0-flash-lite-001",
+        "input_tokens": 238,
+        "output_tokens": 14,
+        "reasoning_tokens": 0,
+        "cost": 2.205e-05,
+        "step": "category_level_0"
+      },
+      {
+        "model": "google/gemini-2.0-flash-lite-001",
+        "input_tokens": 181,
+        "output_tokens": 11,
+        "reasoning_tokens": 0,
+        "cost": 1.6875e-05,
+        "step": "category_level_1"
+      },
+      {
+        "model": "google/gemini-2.0-flash-lite-001",
+        "input_tokens": 228,
+        "output_tokens": 13,
+        "reasoning_tokens": 0,
+        "cost": 2.1e-05,
+        "step": "category_level_2"
+      }
+    ]
+  }
+}

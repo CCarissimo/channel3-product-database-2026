@@ -1,0 +1,97 @@
+{
+  "product": {
+    "name": "DeWalt 20V MAX 1/2 in. Brushed Cordless Compact Drill Kit (Battery & Charger)",
+    "price": {
+      "price": 129.0,
+      "currency": "USD",
+      "compare_at_price": 159.0
+    },
+    "description": "This DeWalt 20V MAX cordless compact drill kit is perfect for a variety of drilling and driving applications. It features a high-performance motor that delivers up to 300 unit watts out of power, and a 2-speed transmission that provides 0-450/0-1500 RPM for a wide range of applications. The compact and lightweight design makes it easy to maneuver in tight spaces, and the LED light allows you to work in dark environments. This kit comes with two 20V MAX Lithium-Ion batteries, a charger, and a carrying case.",
+    "key_features": [
+      "High-performance motor delivers 300 unit watts out of power",
+      "2-speed transmission (0-450/0-1500 RPM) for a wide range of applications",
+      "Compact and lightweight design for easy maneuverability in tight spaces",
+      "LED light illuminates dark work areas",
+      "Includes two 20V MAX Lithium-Ion batteries, charger, and carrying case"
+    ],
+    "image_urls": [
+      "https://cdn-tp6.mozu.com/24645-37138/cms/37138/files/f7b42b30-cf5a-4829-be02-76bf93727867?quality=60&_mzcb=_1767877756410",
+      "https://cdn-tp6.mozu.com/24645-37138/cms/37138/files/b9e63a53-01c5-44c6-97e2-9c78a7ed2a10?quality=60&_mzcb=_1767877756410",
+      "https://cdn-tp6.mozu.com/24645-37138/cms/37138/files/373f3cb5-5ecf-4a57-b7d6-510d8698e977?quality=60&_mzcb=_1767877756410",
+      "https://cdn-tp6.mozu.com/24645-37138/cms/37138/files/9e7c188d-d2b8-4217-b5f8-48b29fd445b1?quality=60&_mzcb=_1767877756410",
+      "https://cdn-tp6.mozu.com/24645-37138/cms/37138/files/f27d0a21-766f-4f84-9927-30cf76b27188?quality=60&_mzcb=_1767877756410",
+      "https://cdn-tp6.mozu.com/24645-37138/cms/37138/files/1b434a2e-7528-42cc-a489-83177395594b?quality=60&_mzcb=_1767877756410",
+      "https://cdn-tp6.mozu.com/24645-37138/cms/37138/files/bb222bcf-a069-4d02-b9d9-f23410f64138?quality=60&_mzcb=_1767877756410",
+      "https://cdn-tp6.mozu.com/24645-37138/cms/37138/files/028f1d30-dca3-4b44-84ef-40a6f3b149e8?quality=60&_mzcb=_1767877756410"
+    ],
+    "video_url": null,
+    "category": {
+      "name": "Hardware > Tools > Drills > Handheld Power Drills"
+    },
+    "brand": "DEWALT",
+    "colors": [],
+    "variants": []
+  },
+  "metrics": {
+    "extraction": {
+      "num_calls": 1,
+      "input_tokens": 11320,
+      "output_tokens": 1117,
+      "cost": 0.0015788,
+      "model": "google/gemini-2.5-flash-lite"
+    },
+    "taxonomy": {
+      "num_calls": 4,
+      "input_tokens": 1302,
+      "output_tokens": 49,
+      "cost": 0.00011235,
+      "model": "google/gemini-2.0-flash-lite-001"
+    },
+    "total_input_tokens": 12622,
+    "total_output_tokens": 1166,
+    "total_cost": 0.00169115,
+    "num_api_calls": 5,
+    "calls": [
+      {
+        "model": "google/gemini-2.5-flash-lite",
+        "input_tokens": 11320,
+        "output_tokens": 1117,
+        "reasoning_tokens": 0,
+        "cost": 0.0015788,
+        "step": "product_extraction"
+      },
+      {
+        "model": "google/gemini-2.0-flash-lite-001",
+        "input_tokens": 271,
+        "output_tokens": 11,
+        "reasoning_tokens": 0,
+        "cost": 2.3624999999999995e-05,
+        "step": "category_level_0"
+      },
+      {
+        "model": "google/gemini-2.0-flash-lite-001",
+        "input_tokens": 245,
+        "output_tokens": 11,
+        "reasoning_tokens": 0,
+        "cost": 2.1674999999999998e-05,
+        "step": "category_level_1"
+      },
+      {
+        "model": "google/gemini-2.0-flash-lite-001",
+        "input_tokens": 586,
+        "output_tokens": 12,
+        "reasoning_tokens": 0,
+        "cost": 4.7550000000000004e-05,
+        "step": "category_level_2"
+      },
+      {
+        "model": "google/gemini-2.0-flash-lite-001",
+        "input_tokens": 200,
+        "output_tokens": 15,
+        "reasoning_tokens": 0,
+        "cost": 1.95e-05,
+        "step": "category_level_3"
+      }
+    ]
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "product": {
+    "name": "Men's Carefree Unshrinkable Tee, Traditional Fit, Henley",
+    "price": {
+      "price": 29.95,
+      "currency": "USD",
+      "compare_at_price": null
+    },
+    "description": "Made of soft cotton that resists wrinkles, shrinking, fading and pilling, our resilient henley keeps its shape wash after wash.\nWe've put our Unshrinkable Carefree Tees to the test, in the lab and in the field. And we're glad to say our unshrinkable t-shirts passed with flying colors. What's more, the 100% cotton fabric resists wrinkles, fading, pilling and shrinking, so our tee keeps its true-to-size fit while maintaining its comfort and softness. No wonder it's been a customer favorite for as long as we've been making it.",
+    "key_features": [
+      "Traditional Fit: Relaxed through the chest, sleeve and waist.",
+      "Ribbed trim is 90% cotton/10% Lycra\u00ae elastane.",
+      "100% jersey-knit cotton.",
+      "Double ring-spun fabric fights shrinkage, wrinkles, fading and pilling.",
+      "Built for comfort, the fabric gets even softer the more you wash and dry it.",
+      "Machine wash and dry.",
+      "Durable double-needle stitching.",
+      "Straight hem can be worn tucked or untucked.",
+      "Comfortable enough for everyday wear.",
+      "Tagless printed label for comfort.",
+      "Soft jersey-knit taping on neck seam."
+    ],
+    "image_urls": [
+      "https://cdni.llbean.net/is/image/wim/224626_1176_41?hei=196&wid=170&defaultImage=llbprod/224626_1176_41",
+      "https://cdni.llbean.net/is/image/wim/224626_1176_44?hei=196&wid=170&defaultImage=llbprod/224626_0_44",
+      "https://cdni.llbean.net/is/image/wim/224626_1176_45?hei=196&wid=170&defaultImage=llbprod/224626_0_45",
+      "https://cdni.llbean.net/is/image/wim/224626_1176_46?hei=196&wid=170&defaultImage=llbprod/224626_0_46",
+      "https://cdni.llbean.net/is/image/wim/224626_1176_47?hei=196&wid=170&defaultImage=llbprod/224626_0_47",
+      "https://cdni.llbean.net/is/image/wim/224626_1176_48?hei=196&wid=170&defaultImage=llbprod/224626_0_48",
+      "https://cdni.llbean.net/is/image/wim/224626_1176_41?hei=1095&wid=950&resMode=sharp2&defaultImage=llbprod/224626_0_44",
+      "https://cdni.llbean.net/is/image/wim/224626_1176_44?hei=1095&wid=950&resMode=sharp2&defaultImage=llbprod/224626_0_44",
+      "https://cdni.llbean.net/is/image/wim/224626_1176_45?hei=1095&wid=950&resMode=sharp2&defaultImage=llbprod/224626_0_44",
+      "https://cdni.llbean.net/is/image/wim/224626_1176_46?hei=1095&wid=950&resMode=sharp2&defaultImage=llbprod/224626_0_44",
+      "https://cdni.llbean.net/is/image/wim/224626_1176_47?hei=1095&wid=950&resMode=sharp2&defaultImage=llbprod/224626_0_44",
+      "https://cdni.llbean.net/is/image/wim/224626_1176_48?hei=1095&wid=950&resMode=sharp2&defaultImage=llbprod/224626_0_44"
+    ],
+    "video_url": null,
+    "category": {
+      "name": "Apparel & Accessories > Clothing > Shirts & Tops"
+    },
+    "brand": "LLBean",
+    "colors": [
+      "Charcoal Heather",
+      "Burgundy Heather",
+      "Forest Green Heather",
+      "Navy Heather",
+      "Classic Red",
+      "True Red",
+      "Deep Navy",
+      "Royal Blue",
+      "Ash Gray",
+      "Dark Khaki",
+      "Black",
+      "White",
+      "Light Blue",
+      "Light Grey Heather",
+      "Rust",
+      "Medium Grey",
+      "Slate Grey",
+      "Faded Red",
+      "Slate Blue"
+    ],
+    "variants": [
+      {
+        "name": "Color",
+        "options": [
+          "Charcoal Heather",
+          "Burgundy Heather",
+          "Forest Green Heather",
+          "Navy Heather",
+          "Classic Red",
+          "True Red",
+          "Deep Navy",
+          "Royal Blue",
+          "Ash Gray",
+          "Dark Khaki",
+          "Black",
+          "White",
+          "Light Blue",
+          "Light Grey Heather",
+          "Rust",
+          "Medium Grey",
+          "Slate Grey",
+          "Faded Red",
+          "Slate Blue"
+        ]
+      },
+      {
+        "name": "Item",
+        "options": [
+          "Regular",
+          "Tall"
+        ]
+      },
+      {
+        "name": "Size",
+        "options": [
+          "Small",
+          "Medium",
+          "Large",
+          "X-Large",
+          "XX-Large",
+          "XXX-Large"
+        ]
+      }
+    ]
+  },
+  "metrics": {
+    "extraction": {
+      "num_calls": 1,
+      "input_tokens": 7348,
+      "output_tokens": 1594,
+      "cost": 0.0013724000000000002,
+      "model": "google/gemini-2.5-flash-lite"
+    },
+    "taxonomy": {
+      "num_calls": 3,
+      "input_tokens": 737,
+      "output_tokens": 38,
+      "cost": 6.6675e-05,
+      "model": "google/gemini-2.0-flash-lite-001"
+    },
+    "total_input_tokens": 8085,
+    "total_output_tokens": 1632,
+    "total_cost": 0.0014390750000000002,
+    "num_api_calls": 4,
+    "calls": [
+      {
+        "model": "google/gemini-2.5-flash-lite",
+        "input_tokens": 7348,
+        "output_tokens": 1594,
+        "reasoning_tokens": 0,
+        "cost": 0.0013724000000000002,
+        "step": "product_extraction"
+      },
+      {
+        "model": "google/gemini-2.0-flash-lite-001",
+        "input_tokens": 268,
+        "output_tokens": 14,
+        "reasoning_tokens": 0,
+        "cost": 2.43e-05,
+        "step": "category_level_0"
+      },
+      {
+        "model": "google/gemini-2.0-flash-lite-001",
+        "input_tokens": 211,
+        "output_tokens": 11,
+        "reasoning_tokens": 0,
+        "cost": 1.9124999999999997e-05,
+        "step": "category_level_1"
+      },
+      {
+        "model": "google/gemini-2.0-flash-lite-001",
+        "input_tokens": 258,
+        "output_tokens": 13,
+        "reasoning_tokens": 0,
+        "cost": 2.325e-05,
+        "step": "category_level_2"
+      }
+    ]
+  }
+}

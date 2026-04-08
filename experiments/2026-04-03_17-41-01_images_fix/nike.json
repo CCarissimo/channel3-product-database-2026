@@ -1,0 +1,84 @@
+{
+  "product": {
+    "name": "Nike Air Force 1 '07 LV8 Men's Shoes",
+    "price": {
+      "price": 76.99,
+      "currency": "GBP",
+      "compare_at_price": 109.99
+    },
+    "description": "Comfortable, durable and timeless\u2014it's number one for a reason. Classic '80s construction, a subtle platform and a blend of smooth synthetic and peached leathers combine for iconic streetwear style.",
+    "key_features": [
+      "The leather upper with a perforated toe box is breathable and comfortable.",
+      "Nike Air unit provides lightweight cushioning.",
+      "Rubber outsole with classic pivot circles delivers traction and durability."
+    ],
+    "image_urls": [
+      "https://static.nike.com/a/images/t_web_pdp_936_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/6a4d2051-1fee-4ce0-aba7-5de42641dae2/NIKE+AIR+FORCE+1+%2707+LV8.png",
+      "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/6a4d2051-1fee-4ce0-aba7-5de42641dae2/NIKE+AIR+FORCE+1+%2707+LV8.png",
+      "https://static.nike.com/a/images/t_PDP_144_v1/f_auto,q_auto:eco/6888cdd1-346f-4136-a14b-7412f920419c/NIKE+AIR+FORCE+1+%2707+LV8.png",
+      "https://static.nike.com/a/images/t_PDP_144_v1/f_auto,q_auto:eco/d6d2266d-0fa9-4f34-bf74-6528c9a0945f/NIKE+AIR+FORCE+1+%2707+LV8.png",
+      "https://static.nike.com/a/images/t_PDP_144_v1/f_auto,q_auto:eco/c90f7949-b685-485e-8602-23f1d079cd3a/AIR+FORCE+1+%2707+WB.png",
+      "https://static.nike.com/a/images/t_PDP_144_v1/f_auto,q_auto:eco/057c2bbd-d065-44eb-913f-51dd4f98d680/AIR+FORCE+1+%2707.png",
+      "https://static.nike.com/a/images/t_PDP_144_v1/f_auto,q_auto:eco/144d0759-690b-42d5-a9c7-9bc9f36e819e/AIR+FORCE+1+%2707+WB.png",
+      "https://static.nike.com/a/images/t_PDP_144_v1/f_auto,q_auto:eco/9fffd0e4-2c1a-4963-8d69-e8582131797b/AIR+FORCE+1+%2707+WB.png",
+      "https://static.nike.com/a/images/t_PDP_144_v1/f_auto,q_auto:eco/5daa00d9-afae-4125-a95c-fc71923b81c3/AIR+FORCE+1+%2707.png",
+      "https://static.nike.com/a/images/t_PDP_144_v1/f_auto,q_auto:eco/4f37fca8-6bce-43e7-ad07-f57ae3c13142/AIR+FORCE+1+%2707.png",
+      "https://static.nike.com/nike-prod-cld/images/t_PDP_144_v1/f_auto,q_auto:eco/static/en_GB-DYO/DYO.png"
+    ],
+    "video_url": null,
+    "category": {
+      "name": "Apparel & Accessories > Shoes"
+    },
+    "brand": "Nike",
+    "colors": [
+      "Phantom/College Grey/Team Red/Black"
+    ],
+    "variants": []
+  },
+  "metrics": {
+    "extraction": {
+      "num_calls": 1,
+      "input_tokens": 3803,
+      "output_tokens": 1253,
+      "cost": 0.0008815000000000001,
+      "model": "google/gemini-2.5-flash-lite"
+    },
+    "taxonomy": {
+      "num_calls": 2,
+      "input_tokens": 303,
+      "output_tokens": 25,
+      "cost": 3.0225e-05,
+      "model": "google/gemini-2.0-flash-lite-001"
+    },
+    "total_input_tokens": 4106,
+    "total_output_tokens": 1278,
+    "total_cost": 0.0009117250000000002,
+    "num_api_calls": 3,
+    "calls": [
+      {
+        "model": "google/gemini-2.5-flash-lite",
+        "input_tokens": 3803,
+        "output_tokens": 1253,
+        "reasoning_tokens": 0,
+        "cost": 0.0008815000000000001,
+        "step": "product_extraction"
+      },
+      {
+        "model": "google/gemini-2.0-flash-lite-001",
+        "input_tokens": 180,
+        "output_tokens": 14,
+        "reasoning_tokens": 0,
+        "cost": 1.77e-05,
+        "step": "category_level_0"
+      },
+      {
+        "model": "google/gemini-2.0-flash-lite-001",
+        "input_tokens": 123,
+        "output_tokens": 11,
+        "reasoning_tokens": 0,
+        "cost": 1.2525e-05,
+        "step": "category_level_1"
+      }
+    ]
+  }
+}

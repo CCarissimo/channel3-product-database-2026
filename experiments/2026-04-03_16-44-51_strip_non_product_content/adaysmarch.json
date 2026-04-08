@@ -1,0 +1,93 @@
+{
+  "product": {
+    "name": "Miller Cotton Lyocell Trousers",
+    "price": {
+      "price": 170.0,
+      "currency": "USD",
+      "compare_at_price": null
+    },
+    "description": "- 65% TENCEL\u2122 Lyocell, 35% cotton \n- One visible button and one button inside\n- Topstitch at waistband\n- Side pockets\n- Two back pockets with buttoning",
+    "key_features": [
+      "65% TENCEL\u2122 Lyocell, 35% cotton",
+      "One visible button and one button inside",
+      "Topstitch at waistband",
+      "Side pockets",
+      "Two back pockets with buttoning"
+    ],
+    "image_urls": [
+      "https://adaymarch.com/cdn/shop/files/8436-0312-miller-cotton-lyocell-trousers-front-1_1920x.jpg?v=1683532889",
+      "https://adaymarch.com/cdn/shop/files/8436-0312-miller-cotton-lyocell-trousers-front-2_1920x.jpg?v=1683532889",
+      "https://adaymarch.com/cdn/shop/files/8436-0312-miller-cotton-lyocell-trousers-back-1_1920x.jpg?v=1683532889",
+      "https://adaymarch.com/cdn/shop/files/8436-0312-miller-cotton-lyocell-trousers-back-2_1920x.jpg?v=1683532889",
+      "https://adaymarch.com/cdn/shop/files/8436-0312-miller-cotton-lyocell-trousers-detail-1_1920x.jpg?v=1683532889"
+    ],
+    "video_url": null,
+    "category": {
+      "name": "Apparel & Accessories > Clothing > Pants"
+    },
+    "brand": "A Day's March",
+    "colors": [],
+    "variants": [
+      "44",
+      "46",
+      "48",
+      "50",
+      "52",
+      "54"
+    ]
+  },
+  "metrics": {
+    "extraction": {
+      "num_calls": 1,
+      "input_tokens": 1064,
+      "output_tokens": 569,
+      "cost": 0.000334,
+      "model": "google/gemini-2.5-flash-lite"
+    },
+    "taxonomy": {
+      "num_calls": 3,
+      "input_tokens": 461,
+      "output_tokens": 37,
+      "cost": 4.5675e-05,
+      "model": "google/gemini-2.0-flash-lite-001"
+    },
+    "total_input_tokens": 1525,
+    "total_output_tokens": 606,
+    "total_cost": 0.000379675,
+    "num_api_calls": 4,
+    "calls": [
+      {
+        "model": "google/gemini-2.5-flash-lite",
+        "input_tokens": 1064,
+        "output_tokens": 569,
+        "reasoning_tokens": 0,
+        "cost": 0.000334,
+        "step": "product_extraction"
+      },
+      {
+        "model": "google/gemini-2.0-flash-lite-001",
+        "input_tokens": 176,
+        "output_tokens": 14,
+        "reasoning_tokens": 0,
+        "cost": 1.74e-05,
+        "step": "category_level_0"
+      },
+      {
+        "model": "google/gemini-2.0-flash-lite-001",
+        "input_tokens": 119,
+        "output_tokens": 11,
+        "reasoning_tokens": 0,
+        "cost": 1.2224999999999999e-05,
+        "step": "category_level_1"
+      },
+      {
+        "model": "google/gemini-2.0-flash-lite-001",
+        "input_tokens": 166,
+        "output_tokens": 12,
+        "reasoning_tokens": 0,
+        "cost": 1.605e-05,
+        "step": "category_level_2"
+      }
+    ]
+  }
+}

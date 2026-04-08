@@ -1,0 +1,98 @@
+{
+  "product": {
+    "name": "DeWalt 20V MAX 1/2 in. Brushed Cordless Compact Drill Kit (Battery & Charger)",
+    "price": {
+      "price": 129.0,
+      "currency": "USD",
+      "compare_at_price": 159.0
+    },
+    "description": "The DeWalt 20V MAX Cordless Compact Drill/Driver is lightweight and compact for working in tight spaces, and gives you the power you need for a variety of applications. The high-performance motor and transmission offer durability and power. Includes two 20V MAX batteries, charger, and a kit bag.",
+    "key_features": [
+      "High-performance motor delivers 300 UWO of power",
+      "Compact and lightweight design (2.6 lbs) for ease of use",
+      "Variable speed trigger (0-450 / 0-1500 RPM) for optimal speed control",
+      "1/2-inch keyless chuck for easy bit changes",
+      "LED light with 20-second delay illuminates your work space",
+      "Ergonomic handle for comfortable grip"
+    ],
+    "image_urls": [
+      "https://images.acehardware.com/product/5a30954ca78998da4d376a54d8004664e4c8e9b0.jpg?w=480&h=480",
+      "https://images.acehardware.com/product/0fac23a55bf172271b80dd020362ef0b6cc8d4a4.jpg?w=480&h=480",
+      "https://images.acehardware.com/product/5346453da8bff30fa365a370577f0508a2c880bf.jpg?w=480&h=480",
+      "https://images.acehardware.com/product/77f9165ce328b7ff537682840bf34eb4ba57b147.jpg?w=480&h=480",
+      "https://images.acehardware.com/product/a55667f53017261069a7f54583cb6dcf9c865d83.jpg?w=480&h=480",
+      "https://images.acehardware.com/product/40728190de7c2887d044119564e952143d432167.jpg?w=480&h=480",
+      "https://images.acehardware.com/product/bf41a49fe9c39850345921beff2a4f3929688bfb.jpg?w=480&h=480",
+      "https://images.acehardware.com/product/234b7fca3e4ea194bb9882e1c0368114f994a334.jpg?w=480&h=480"
+    ],
+    "video_url": null,
+    "category": {
+      "name": "Hardware > Tools > Drills > Handheld Power Drills"
+    },
+    "brand": "DEWALT",
+    "colors": [],
+    "variants": []
+  },
+  "metrics": {
+    "extraction": {
+      "num_calls": 1,
+      "input_tokens": 3743,
+      "output_tokens": 832,
+      "cost": 0.0007071,
+      "model": "google/gemini-2.5-flash-lite"
+    },
+    "taxonomy": {
+      "num_calls": 4,
+      "input_tokens": 1070,
+      "output_tokens": 49,
+      "cost": 9.494999999999999e-05,
+      "model": "google/gemini-2.0-flash-lite-001"
+    },
+    "total_input_tokens": 4813,
+    "total_output_tokens": 881,
+    "total_cost": 0.00080205,
+    "num_api_calls": 5,
+    "calls": [
+      {
+        "model": "google/gemini-2.5-flash-lite",
+        "input_tokens": 3743,
+        "output_tokens": 832,
+        "reasoning_tokens": 0,
+        "cost": 0.0007071,
+        "step": "product_extraction"
+      },
+      {
+        "model": "google/gemini-2.0-flash-lite-001",
+        "input_tokens": 213,
+        "output_tokens": 11,
+        "reasoning_tokens": 0,
+        "cost": 1.9274999999999998e-05,
+        "step": "category_level_0"
+      },
+      {
+        "model": "google/gemini-2.0-flash-lite-001",
+        "input_tokens": 187,
+        "output_tokens": 11,
+        "reasoning_tokens": 0,
+        "cost": 1.7324999999999998e-05,
+        "step": "category_level_1"
+      },
+      {
+        "model": "google/gemini-2.0-flash-lite-001",
+        "input_tokens": 528,
+        "output_tokens": 12,
+        "reasoning_tokens": 0,
+        "cost": 4.32e-05,
+        "step": "category_level_2"
+      },
+      {
+        "model": "google/gemini-2.0-flash-lite-001",
+        "input_tokens": 142,
+        "output_tokens": 15,
+        "reasoning_tokens": 0,
+        "cost": 1.5149999999999999e-05,
+        "step": "category_level_3"
+      }
+    ]
+  }
+}

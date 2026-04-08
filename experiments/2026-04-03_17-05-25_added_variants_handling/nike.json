@@ -1,0 +1,85 @@
+{
+  "product": {
+    "name": "Nike Air Force 1 '07 LV8 Men's Shoes",
+    "price": {
+      "price": 76.99,
+      "currency": "\u00a3",
+      "compare_at_price": 109.99
+    },
+    "description": "Comfortable, durable and timeless\u2014it's number one for a reason. Classic '80s construction, a subtle platform and a blend of smooth synthetic and peached leathers combine for iconic streetwear style.",
+    "key_features": [
+      "The leather upper with a perforated toe box is breathable and comfortable.",
+      "Nike Air unit provides lightweight cushioning.",
+      "Rubber outsole with classic pivot circles delivers traction and durability.",
+      "Low-cut silhouette",
+      "Padded collar",
+      "Foam midsole"
+    ],
+    "image_urls": [
+      "https://static.nike.com/a/images/f_auto,b_rgb:f5f5f5,w_885/f063e5f1-0124-4060-a50d-e24f82b01874/image.png",
+      "https://static.nike.com/a/images/f_auto,b_rgb:f5f5f5,w_885/5e371971-e460-4069-b53d-aa938329942a/image.png",
+      "https://static.nike.com/a/images/f_auto,b_rgb:f5f5f5,w_885/332712ab-7a3e-4784-a0c7-6859439dd65f/image.png",
+      "https://static.nike.com/a/images/f_auto,b_rgb:f5f5f5,w_885/83bd9d4f-3e06-4597-81ec-0e0383e8d296/image.png",
+      "https://static.nike.com/a/images/f_auto,b_rgb:f5f5f5,w_885/350a0a3d-66b5-498c-8b73-874869014a6c/image.png",
+      "https://static.nike.com/a/images/f_auto,b_rgb:f5f5f5,w_885/85d33030-c843-4555-8785-51c90cfd4233/image.png",
+      "https://static.nike.com/a/images/f_auto,b_rgb:f5f5f5,w_885/236485b6-138a-4752-9899-6164fb541e02/image.png",
+      "https://static.nike.com/a/images/f_auto,b_rgb:f5f5f5,w_885/c795361f-ad96-4f8d-ab5b-6b9f762d35f7/image.png",
+      "https://static.nike.com/a/images/t_PDP_1440_PNG/f_auto,b_rgb:f5f5f5/d89ae91d-0399-41b8-b42c-bd7e28c0b261/air-force-1-07-lv8-mens-shoes-IO2077.png"
+    ],
+    "video_url": null,
+    "category": {
+      "name": "Apparel & Accessories > Shoes"
+    },
+    "brand": "Nike",
+    "colors": [
+      "Phantom/College Grey/Team Red/Black"
+    ],
+    "variants": []
+  },
+  "metrics": {
+    "extraction": {
+      "num_calls": 1,
+      "input_tokens": 1638,
+      "output_tokens": 954,
+      "cost": 0.0005454,
+      "model": "google/gemini-2.5-flash-lite"
+    },
+    "taxonomy": {
+      "num_calls": 2,
+      "input_tokens": 303,
+      "output_tokens": 25,
+      "cost": 3.0225e-05,
+      "model": "google/gemini-2.0-flash-lite-001"
+    },
+    "total_input_tokens": 1941,
+    "total_output_tokens": 979,
+    "total_cost": 0.0005756250000000001,
+    "num_api_calls": 3,
+    "calls": [
+      {
+        "model": "google/gemini-2.5-flash-lite",
+        "input_tokens": 1638,
+        "output_tokens": 954,
+        "reasoning_tokens": 0,
+        "cost": 0.0005454,
+        "step": "product_extraction"
+      },
+      {
+        "model": "google/gemini-2.0-flash-lite-001",
+        "input_tokens": 180,
+        "output_tokens": 14,
+        "reasoning_tokens": 0,
+        "cost": 1.77e-05,
+        "step": "category_level_0"
+      },
+      {
+        "model": "google/gemini-2.0-flash-lite-001",
+        "input_tokens": 123,
+        "output_tokens": 11,
+        "reasoning_tokens": 0,
+        "cost": 1.2525e-05,
+        "step": "category_level_1"
+      }
+    ]
+  }
+}

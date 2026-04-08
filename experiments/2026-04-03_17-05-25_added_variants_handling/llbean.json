@@ -1,0 +1,122 @@
+{
+  "product": {
+    "name": "Men's Carefree Unshrinkable Tee, Traditional Fit, Henley",
+    "price": {
+      "price": 29.95,
+      "currency": "USD",
+      "compare_at_price": null
+    },
+    "description": "Made of soft cotton that resists wrinkles, shrinking, fading and pilling, our resilient henley keeps its shape wash after wash. We've put our Unshrinkable Carefree Tees to the test, in the lab and in the field. And we're glad to say our unshrinkable t-shirts passed with flying colors. What's more, the 100% cotton fabric resists wrinkles, fading, pilling and shrinking, so our tee keeps its true-to-size fit while maintaining its comfort and softness. No wonder it's been a customer favorite for as long as we've been making it.",
+    "key_features": [
+      "Traditional Fit: Relaxed through the chest, sleeve and waist.",
+      "Ribbed trim is 90% cotton/10% Lycra\u00ae elastane.",
+      "100% jersey-knit cotton.",
+      "Double ring-spun fabric fights shrinkage, wrinkles, fading and pilling.",
+      "Fabric gets even softer the more you wash and dry it.",
+      "Machine wash and dry.",
+      "Durable double-needle stitching.",
+      "Straight hem can be worn tucked or untucked.",
+      "Comfortable enough for everyday wear.",
+      "Tagless printed label for comfort.",
+      "Soft jersey-knit taping on neck seam.",
+      "Imported."
+    ],
+    "image_urls": [
+      "https://www.llbean.com/llb/shop/124130?page=mens-carefree-unshrinkable-tee-traditional-fit-henley&pics=2&activePic=2",
+      "https://www.llbean.com/llb/shop/124130?page=mens-carefree-unshrinkable-tee-traditional-fit-henley&pics=3&activePic=3",
+      "https://www.llbean.com/llb/shop/124130?page=mens-carefree-unshrinkable-tee-traditional-fit-henley&pics=4&activePic=4",
+      "https://www.llbean.com/llb/shop/124130?page=mens-carefree-unshrinkable-tee-traditional-fit-henley&pics=5&activePic=5",
+      "https://www.llbean.com/llb/shop/124130?page=mens-carefree-unshrinkable-tee-traditional-fit-henley&pics=6&activePic=6",
+      "https://www.llbean.com/llb/shop/124130?page=mens-carefree-unshrinkable-tee-traditional-fit-henley&pics=7&activePic=7"
+    ],
+    "video_url": null,
+    "category": {
+      "name": "Apparel & Accessories > Clothing > Shirts & Tops"
+    },
+    "brand": "L.L.Bean",
+    "colors": [
+      "Charcoal Heather",
+      "Black",
+      "Navy",
+      "Forest Green",
+      "Red",
+      "Ash Green",
+      "Light Grey",
+      "White"
+    ],
+    "variants": [
+      {
+        "name": "Item",
+        "options": [
+          "Regular",
+          "Tall"
+        ]
+      },
+      {
+        "name": "Size",
+        "options": [
+          "Small",
+          "Medium",
+          "Large",
+          "X-Large",
+          "XX-Large",
+          "XXX-Large"
+        ]
+      }
+    ]
+  },
+  "metrics": {
+    "extraction": {
+      "num_calls": 1,
+      "input_tokens": 3296,
+      "output_tokens": 866,
+      "cost": 0.000676,
+      "model": "google/gemini-2.5-flash-lite"
+    },
+    "taxonomy": {
+      "num_calls": 3,
+      "input_tokens": 734,
+      "output_tokens": 38,
+      "cost": 6.645e-05,
+      "model": "google/gemini-2.0-flash-lite-001"
+    },
+    "total_input_tokens": 4030,
+    "total_output_tokens": 904,
+    "total_cost": 0.00074245,
+    "num_api_calls": 4,
+    "calls": [
+      {
+        "model": "google/gemini-2.5-flash-lite",
+        "input_tokens": 3296,
+        "output_tokens": 866,
+        "reasoning_tokens": 0,
+        "cost": 0.000676,
+        "step": "product_extraction"
+      },
+      {
+        "model": "google/gemini-2.0-flash-lite-001",
+        "input_tokens": 267,
+        "output_tokens": 14,
+        "reasoning_tokens": 0,
+        "cost": 2.4225e-05,
+        "step": "category_level_0"
+      },
+      {
+        "model": "google/gemini-2.0-flash-lite-001",
+        "input_tokens": 210,
+        "output_tokens": 11,
+        "reasoning_tokens": 0,
+        "cost": 1.905e-05,
+        "step": "category_level_1"
+      },
+      {
+        "model": "google/gemini-2.0-flash-lite-001",
+        "input_tokens": 257,
+        "output_tokens": 13,
+        "reasoning_tokens": 0,
+        "cost": 2.3175e-05,
+        "step": "category_level_2"
+      }
+    ]
+  }
+}

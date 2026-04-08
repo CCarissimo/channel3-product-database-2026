@@ -1,0 +1,97 @@
+{
+  "product": {
+    "name": "DeWalt 20V MAX 1/2 in. Brushed Cordless Compact Drill Kit (Battery & Charger)",
+    "price": {
+      "price": 129.0,
+      "currency": "USD",
+      "compare_at_price": 159.0
+    },
+    "description": "This DeWalt 20V MAX 1/2 in. Brushed Cordless Compact Drill Kit provides performance and durability for a variety of applications. It features a high-performance motor for speed of application and a compact, lightweight design for easy handling. The kit includes a 20V MAX battery and charger, as well as a durable carrying case.",
+    "key_features": [
+      "High-performance motor delivers 270 unit watts out (UWO) of power",
+      "Compact and lightweight design (2.6 lbs.) with 6.5 in. length",
+      "LED light with 20-second delay illuminates your work surface",
+      "Single sleeve 1/2 in. ratcheting chuck for quick bit changes",
+      "Includes two 20V MAX compact lithium-ion batteries (2.0 Ah), charger, and carrying case"
+    ],
+    "image_urls": [
+      "https://cdn-tp6.mozu.com/24645-37138/cms/37138/files/f7b42b30-cf5a-4829-be02-76bf93727867?quality=60&max=480&_mzcb=_1767877756410",
+      "https://cdn-tp6.mozu.com/24645-37138/cms/37138/files/b9e63a53-01c5-44c6-97e2-9c78a7ed2a10?quality=60&_mzcb=_1767877756410",
+      "https://cdn-tp6.mozu.com/24645-37138/cms/37138/files/373f3cb5-5ecf-4a57-b7d6-510d8698e977?quality=60&_mzcb=_1767877756410",
+      "https://cdn-tp6.mozu.com/24645-37138/cms/37138/files/9e7c188d-d2b8-4217-b5f8-48b29fd445b1?quality=60&_mzcb=_1767877756410",
+      "https://cdn-tp6.mozu.com/24645-37138/cms/37138/files/f27d0a21-766f-4f84-9927-30cf76b27188?quality=60&_mzcb=_1767877756410",
+      "https://cdn-tp6.mozu.com/24645-37138/cms/37138/files/1b434a2e-7528-42cc-a489-83177395594b?quality=60&_mzcb=_1767877756410",
+      "https://cdn-tp6.mozu.com/24645-37138/cms/37138/files/bb222bcf-a069-4d02-b9d9-f23410f64138?quality=60&_mzcb=_1767877756410",
+      "https://cdn-tp6.mozu.com/24645-37138/cms/37138/files/028f1d30-dca3-4b44-84ef-40a6f3b149e8?quality=60&_mzcb=_1767877756410"
+    ],
+    "video_url": null,
+    "category": {
+      "name": "Hardware > Tools > Drills > Handheld Power Drills"
+    },
+    "brand": "DEWALT",
+    "colors": [],
+    "variants": []
+  },
+  "metrics": {
+    "extraction": {
+      "num_calls": 1,
+      "input_tokens": 11320,
+      "output_tokens": 1087,
+      "cost": 0.0015668000000000001,
+      "model": "google/gemini-2.5-flash-lite"
+    },
+    "taxonomy": {
+      "num_calls": 4,
+      "input_tokens": 1098,
+      "output_tokens": 49,
+      "cost": 9.705e-05,
+      "model": "google/gemini-2.0-flash-lite-001"
+    },
+    "total_input_tokens": 12418,
+    "total_output_tokens": 1136,
+    "total_cost": 0.0016638500000000001,
+    "num_api_calls": 5,
+    "calls": [
+      {
+        "model": "google/gemini-2.5-flash-lite",
+        "input_tokens": 11320,
+        "output_tokens": 1087,
+        "reasoning_tokens": 0,
+        "cost": 0.0015668000000000001,
+        "step": "product_extraction"
+      },
+      {
+        "model": "google/gemini-2.0-flash-lite-001",
+        "input_tokens": 220,
+        "output_tokens": 11,
+        "reasoning_tokens": 0,
+        "cost": 1.98e-05,
+        "step": "category_level_0"
+      },
+      {
+        "model": "google/gemini-2.0-flash-lite-001",
+        "input_tokens": 194,
+        "output_tokens": 11,
+        "reasoning_tokens": 0,
+        "cost": 1.785e-05,
+        "step": "category_level_1"
+      },
+      {
+        "model": "google/gemini-2.0-flash-lite-001",
+        "input_tokens": 535,
+        "output_tokens": 12,
+        "reasoning_tokens": 0,
+        "cost": 4.3725e-05,
+        "step": "category_level_2"
+      },
+      {
+        "model": "google/gemini-2.0-flash-lite-001",
+        "input_tokens": 149,
+        "output_tokens": 15,
+        "reasoning_tokens": 0,
+        "cost": 1.5674999999999998e-05,
+        "step": "category_level_3"
+      }
+    ]
+  }
+}

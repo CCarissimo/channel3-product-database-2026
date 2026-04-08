@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product pages demo for channel3</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f5f5f7;
+      color: #1d1d1f;
+      padding-bottom: 80px;
+    }
+
+    .header {
+      padding: 24px 24px 0;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .header h1 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .header .subtitle {
+      font-size: 13px;
+      color: #86868b;
+    }
+
+    /* Product Grid */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 24px auto 0;
+      padding: 0 24px;
+    }
+    .product-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+    .product-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    }
+    .product-card-img {
+      width: 100%;
+      height: 220px;
+      object-fit: contain;
+      background: #fafafa;
+      padding: 12px;
+    }
+    .product-card-img.placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #c7c7cc;
+      font-size: 48px;
+    }
+    .product-card-body {
+      padding: 16px;
+    }
+    .product-card-brand {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #6e6e73;
+      margin-bottom: 4px;
+    }
+    .product-card-name {
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.3;
+      margin-bottom: 8px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .product-card-price {
+      font-size: 16px;
+      font-weight: 600;
+    }
+    .product-card-price .compare {
+      font-size: 13px;
+      color: #86868b;
+      text-decoration: line-through;
+      margin-left: 6px;
+      font-weight: 400;
+    }
+    .product-card-category {
+      font-size: 11px;
+      color: #86868b;
+      margin-top: 6px;
+    }
+
+    /* Bottom Bar */
+    .bottom-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: white;
+      border-top: 1px solid #e5e5e7;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      font-size: 12px;
+      color: #6e6e73;
+      z-index: 50;
+    }
+    .cost-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .cost-value {
+      font-size: 14px;
+      font-weight: 600;
+      color: #1d1d1f;
+    }
+    .history-btn {
+      margin-right: auto;
+      padding: 6px 12px;
+      background: #f5f5f7;
+      border: 1px solid #d1d1d6;
+      border-radius: 6px;
+      font-size: 11px;
+      color: #6e6e73;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+    .history-btn:hover {
+      background: #e8e8ed;
+    }
+
+    /* History Panel */
+    .history-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 90;
+      align-items: flex-end;
+      justify-content: flex-start;
+      padding: 24px;
+    }
+    .history-overlay.active { display: flex; }
+    .history-panel {
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      width: 520px;
+      max-height: 400px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+      margin-bottom: 60px;
+    }
+    .history-panel h3 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    .history-close {
+      float: right;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: none;
+      background: #e5e5e7;
+      cursor: pointer;
+      font-size: 16px;
+      line-height: 28px;
+      text-align: center;
+    }
+    .history-close:hover { background: #d1d1d6; }
+
+    /* Modal / PDP */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal {
+      background: white;
+      border-radius: 16px;
+      max-width: 800px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    .modal-close {
+      position: sticky;
+      top: 0;
+      float: right;
+      margin: 12px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: none;
+      background: #e5e5e7;
+      cursor: pointer;
+      font-size: 18px;
+      line-height: 32px;
+      text-align: center;
+      z-index: 1;
+    }
+    .modal-close:hover { background: #d1d1d6; }
+    .pdp { padding: 32px; }
+    .carousel {
+      position: relative;
+      margin-bottom: 24px;
+      background: #fafafa;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .carousel-main {
+      width: 100%;
+      height: 360px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .carousel-main img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+    }
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(255,255,255,0.85);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+      cursor: pointer;
+      font-size: 18px;
+      line-height: 36px;
+      text-align: center;
+      z-index: 2;
+      transition: background 0.2s;
+    }
+    .carousel-btn:hover { background: white; }
+    .carousel-btn.prev { left: 10px; }
+    .carousel-btn.next { right: 10px; }
+    .carousel-counter {
+      text-align: center;
+      font-size: 12px;
+      color: #86868b;
+      padding: 8px 0;
+    }
+    .carousel-thumbs {
+      display: flex;
+      gap: 6px;
+      justify-content: center;
+      padding: 0 12px 12px;
+      overflow-x: auto;
+    }
+    .carousel-thumb {
+      width: 48px;
+      height: 48px;
+      border-radius: 6px;
+      object-fit: contain;
+      background: white;
+      border: 2px solid transparent;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: border-color 0.2s;
+    }
+    .carousel-thumb.active { border-color: #007aff; }
+    .pdp-brand {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #6e6e73;
+      margin-bottom: 4px;
+    }
+    .pdp-name {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .pdp-price {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    .pdp-price .compare {
+      font-size: 15px;
+      color: #86868b;
+      text-decoration: line-through;
+      margin-left: 8px;
+      font-weight: 400;
+    }
+    .pdp-description {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #424245;
+      margin-bottom: 20px;
+    }
+    .pdp-section-title {
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #6e6e73;
+      margin-bottom: 8px;
+      margin-top: 20px;
+    }
+    .pdp-features {
+      list-style: none;
+      padding: 0;
+    }
+    .pdp-features li {
+      font-size: 14px;
+      padding: 4px 0;
+      padding-left: 16px;
+      position: relative;
+      color: #424245;
+    }
+    .pdp-features li::before {
+      content: "\2022";
+      position: absolute;
+      left: 0;
+      color: #86868b;
+    }
+    .pdp-variants {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .pdp-variant {
+      background: #f5f5f7;
+      border-radius: 8px;
+      padding: 10px 14px;
+    }
+    .pdp-variant-name {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #6e6e73;
+      margin-bottom: 4px;
+    }
+    .pdp-variant-options {
+      font-size: 13px;
+      color: #1d1d1f;
+    }
+    .pdp-colors {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .pdp-color-chip {
+      padding: 4px 10px;
+      background: #f5f5f7;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+    .pdp-category {
+      font-size: 12px;
+      color: #86868b;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid #e5e5e7;
+    }
+    .pdp-metrics {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid #e5e5e7;
+      display: flex;
+      gap: 24px;
+      font-size: 11px;
+      color: #86868b;
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <h1 id="experiment-title">Product Extraction Dashboard</h1>
+  <div class="subtitle" id="experiment-subtitle"></div>
+</div>
+
+<div class="product-grid" id="product-grid"></div>
+
+<!-- Bottom cost bar -->
+<div class="bottom-bar">
+  <button class="history-btn" onclick="toggleHistory()">History of cost optimizations</button>
+  <div class="cost-item">
+    <span>Total Cost</span>
+    <span class="cost-value" id="bar-cost">--</span>
+  </div>
+  <div class="cost-item">
+    <span>Input Tokens</span>
+    <span class="cost-value" id="bar-input">--</span>
+  </div>
+  <div class="cost-item">
+    <span>Output Tokens</span>
+    <span class="cost-value" id="bar-output">--</span>
+  </div>
+  <div class="cost-item">
+    <span>API Calls</span>
+    <span class="cost-value" id="bar-calls">--</span>
+  </div>
+  <div class="cost-item">
+    <span>Extraction</span>
+    <span class="cost-value" id="bar-extraction">--</span>
+  </div>
+  <div class="cost-item">
+    <span>Taxonomy</span>
+    <span class="cost-value" id="bar-taxonomy">--</span>
+  </div>
+</div>
+
+<!-- History chart panel -->
+<div class="history-overlay" id="history-overlay">
+  <div class="history-panel">
+    <button class="history-close" onclick="toggleHistory()">&times;</button>
+    <h3>Total Cost per Experiment</h3>
+    <canvas id="chart-cost"></canvas>
+  </div>
+</div>
+
+<!-- Product detail modal -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <div class="pdp" id="pdp-content"></div>
+  </div>
+</div>
+
+<script>
+const EXPERIMENTS_PATH = '../experiments';
+let summaryData = [];
+let latestFolder = '';
+let latestExp = null;
+
+async function loadData() {
+  const summaryRes = await fetch(`${EXPERIMENTS_PATH}/summary.json`);
+  summaryData = await summaryRes.json();
+  if (summaryData.length === 0) return;
+
+  const latest = summaryData[summaryData.length - 1];
+  latestFolder = latest.name
+    ? `${latest.timestamp}_${latest.name}`
+    : latest.timestamp;
+
+  const expRes = await fetch(`${EXPERIMENTS_PATH}/${latestFolder}/experiment.json`);
+  latestExp = await expRes.json();
+
+  renderHeader(latest);
+  renderGrid();
+  renderCostBar();
+  enrichCards();
+}
+
+function renderHeader(entry) {
+  const title = entry.name || entry.timestamp;
+  document.getElementById('experiment-title').textContent = 'Product pages demo for channel3';
+  document.getElementById('experiment-subtitle').textContent =
+    `${latestExp.products.length} products extracted`;
+}
+
+function renderGrid() {
+  const grid = document.getElementById('product-grid');
+  let html = '';
+  for (const prod of latestExp.products) {
+    const p = prod.file.replace('.html', '');
+    html += `
+      <div class="product-card" data-product="${p}">
+        <div class="product-card-img placeholder">&#128247;</div>
+        <div class="product-card-body">
+          <div class="product-card-brand"></div>
+          <div class="product-card-name">${escapeHtml(prod.product_name)}</div>
+          <div class="product-card-price"></div>
+          <div class="product-card-category">${escapeHtml(prod.category || '')}</div>
+        </div>
+      </div>
+    `;
+  }
+  grid.innerHTML = html;
+}
+
+function renderCostBar() {
+  const totals = latestExp.totals || {};
+  const breakdown = latestExp.breakdown || {};
+  document.getElementById('bar-cost').textContent = `$${(totals.cost || 0).toFixed(6)}`;
+  document.getElementById('bar-input').textContent = (totals.input_tokens || 0).toLocaleString();
+  document.getElementById('bar-output').textContent = (totals.output_tokens || 0).toLocaleString();
+  document.getElementById('bar-calls').textContent = totals.api_calls || 0;
+  document.getElementById('bar-extraction').textContent = `$${(breakdown.extraction?.cost || 0).toFixed(6)}`;
+  document.getElementById('bar-taxonomy').textContent = `$${(breakdown.taxonomy?.cost || 0).toFixed(6)}`;
+}
+
+let historyChart = null;
+
+function toggleHistory() {
+  const overlay = document.getElementById('history-overlay');
+  const isOpen = overlay.classList.toggle('active');
+  if (isOpen && !historyChart) {
+    const labels = summaryData.map(e => e.name || e.timestamp.split('_').slice(-1)[0]);
+    historyChart = new Chart(document.getElementById('chart-cost'), {
+      type: 'bar',
+      data: {
+        labels,
+        datasets: [{
+          label: 'Total Cost ($)',
+          data: summaryData.map(e => e.total_cost),
+          backgroundColor: 'rgba(0, 122, 255, 0.8)',
+        }]
+      },
+      options: {
+        plugins: { legend: { display: false } },
+        scales: { y: { beginAtZero: true } }
+      }
+    });
+  }
+}
+
+function formatPrice(price) {
+  if (!price) return '';
+  const symbol = price.currency === 'USD' ? '$' : price.currency === 'EUR' ? '\u20AC' : price.currency + ' ';
+  return symbol + price.price.toFixed(2);
+}
+
+function filterImageUrls(urls) {
+  if (!urls) return [];
+  return urls.filter(url => {
+    if (typeof url !== 'string') return false;
+    if (!/^https?:\/\//.test(url)) return false;
+    if (/\.(jpg|jpeg|png|gif|webp|svg|avif)(\?|$)/i.test(url)) return true;
+    if (/\/(image|images|img|photos|media)\b/i.test(url)) return true;
+    if (/(cloudinary|imgix|static\.nike|shopify)/i.test(url)) return true;
+    return false;
+  });
+}
+
+function escapeHtml(str) {
+  if (!str) return '';
+  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+const productCache = {};
+
+async function loadProduct(name) {
+  if (productCache[name]) return productCache[name];
+  const res = await fetch(`${EXPERIMENTS_PATH}/${latestFolder}/${name}.json`);
+  let data = await res.json();
+  if (data && !data.product && data.name) {
+    data = { product: data, metrics: {} };
+  }
+  productCache[name] = data;
+  return data;
+}
+
+async function enrichCards() {
+  const cards = document.querySelectorAll('.product-card[data-product]');
+  for (const card of cards) {
+    const name = card.dataset.product;
+    const data = await loadProduct(name);
+    if (!data || !data.product) continue;
+
+    const p = data.product;
+
+    const validUrls = filterImageUrls(p.image_urls);
+    const imgEl = card.querySelector('.product-card-img');
+    if (imgEl && validUrls.length > 0) {
+      const img = document.createElement('img');
+      img.className = 'product-card-img';
+      img.src = validUrls[0];
+      img.onerror = () => { img.outerHTML = '<div class="product-card-img placeholder">&#128247;</div>'; };
+      imgEl.replaceWith(img);
+    }
+
+    const brandEl = card.querySelector('.product-card-brand');
+    if (brandEl) brandEl.textContent = p.brand || '';
+
+    const priceEl = card.querySelector('.product-card-price');
+    if (priceEl) {
+      let priceHtml = formatPrice(p.price);
+      if (p.price && p.price.compare_at_price) {
+        priceHtml += `<span class="compare">${formatPrice({price: p.price.compare_at_price, currency: p.price.currency})}</span>`;
+      }
+      priceEl.innerHTML = priceHtml;
+    }
+  }
+}
+
+async function openPDP(name) {
+  let data;
+  try {
+    data = await loadProduct(name);
+  } catch (e) {
+    console.error(`Failed to load ${name}:`, e);
+    return;
+  }
+  if (!data || !data.product) return;
+
+  const p = data.product;
+  const m = data.metrics || {};
+  const pdp = document.getElementById('pdp-content');
+
+  const validUrls = filterImageUrls(p.image_urls);
+  currentCarouselUrls = validUrls;
+  let imagesHtml = '';
+  if (validUrls.length > 0) {
+    const thumbsHtml = validUrls.length > 1
+      ? `<div class="carousel-thumbs">${validUrls.map((url, i) =>
+          `<img class="carousel-thumb${i === 0 ? ' active' : ''}" src="${url}" onclick="goToSlide(${i})" onerror="this.style.display='none'" />`
+        ).join('')}</div>`
+      : '';
+    const btnsHtml = validUrls.length > 1
+      ? `<button class="carousel-btn prev" onclick="prevSlide()">&#8249;</button>
+         <button class="carousel-btn next" onclick="nextSlide()">&#8250;</button>`
+      : '';
+    const counterHtml = validUrls.length > 1
+      ? `<div class="carousel-counter"><span id="carousel-index">1</span> / ${validUrls.length}</div>`
+      : '';
+    imagesHtml = `
+      <div class="carousel" data-index="0">
+        ${btnsHtml}
+        <div class="carousel-main">
+          <img id="carousel-img" src="${validUrls[0]}" onerror="this.style.display='none'" />
+        </div>
+        ${counterHtml}
+        ${thumbsHtml}
+      </div>
+    `;
+  }
+
+  let priceHtml = formatPrice(p.price);
+  if (p.price && p.price.compare_at_price) {
+    priceHtml += `<span class="compare">${formatPrice({price: p.price.compare_at_price, currency: p.price.currency})}</span>`;
+  }
+
+  let featuresHtml = '';
+  if (p.key_features && p.key_features.length > 0) {
+    featuresHtml = `
+      <div class="pdp-section-title">Key Features</div>
+      <ul class="pdp-features">${p.key_features.map(f => `<li>${escapeHtml(f)}</li>`).join('')}</ul>
+    `;
+  }
+
+  let variantsHtml = '';
+  if (p.variants && p.variants.length > 0) {
+    const isStructured = typeof p.variants[0] === 'object' && p.variants[0].name;
+    if (isStructured) {
+      variantsHtml = `
+        <div class="pdp-section-title">Variants</div>
+        <div class="pdp-variants">
+          ${p.variants.map(v => `
+            <div class="pdp-variant">
+              <div class="pdp-variant-name">${escapeHtml(v.name)}</div>
+              <div class="pdp-variant-options">${escapeHtml(v.options.join(', '))}</div>
+            </div>
+          `).join('')}
+        </div>
+      `;
+    } else {
+      variantsHtml = `
+        <div class="pdp-section-title">Variants</div>
+        <div class="pdp-variants">
+          <div class="pdp-variant">
+            <div class="pdp-variant-options">${p.variants.map(v => escapeHtml(String(v))).join(', ')}</div>
+          </div>
+        </div>
+      `;
+    }
+  }
+
+  let colorsHtml = '';
+  if (p.colors && p.colors.length > 0) {
+    colorsHtml = `
+      <div class="pdp-section-title">Colors</div>
+      <div class="pdp-colors">
+        ${p.colors.map(c => `<span class="pdp-color-chip">${escapeHtml(c)}</span>`).join('')}
+      </div>
+    `;
+  }
+
+  let categoryHtml = '';
+  if (p.category) {
+    categoryHtml = `<div class="pdp-category">${escapeHtml(p.category.name || p.category)}</div>`;
+  }
+
+  let metricsHtml = '';
+  if (m.extraction || m.taxonomy) {
+    metricsHtml = `
+      <div class="pdp-metrics">
+        <span>Extraction: ${m.extraction?.input_tokens || 0} in / ${m.extraction?.output_tokens || 0} out / $${(m.extraction?.cost || 0).toFixed(6)}</span>
+        <span>Taxonomy: ${m.taxonomy?.input_tokens || 0} in / ${m.taxonomy?.output_tokens || 0} out / $${(m.taxonomy?.cost || 0).toFixed(6)} (${m.taxonomy?.num_calls || 0} calls)</span>
+        <span>Total: $${(m.total_cost || 0).toFixed(6)}</span>
+      </div>
+    `;
+  }
+
+  pdp.innerHTML = `
+    ${imagesHtml}
+    <div class="pdp-brand">${escapeHtml(p.brand || '')}</div>
+    <div class="pdp-name">${escapeHtml(p.name)}</div>
+    <div class="pdp-price">${priceHtml}</div>
+    <div class="pdp-description">${escapeHtml(p.description)}</div>
+    ${featuresHtml}
+    ${variantsHtml}
+    ${colorsHtml}
+    ${categoryHtml}
+    ${metricsHtml}
+  `;
+
+  document.getElementById('modal-overlay').classList.add('active');
+}
+
+let currentCarouselUrls = [];
+
+function goToSlide(index) {
+  const carousel = document.querySelector('.carousel');
+  if (!carousel || currentCarouselUrls.length === 0) return;
+  if (index < 0) index = currentCarouselUrls.length - 1;
+  if (index >= currentCarouselUrls.length) index = 0;
+  carousel.dataset.index = index;
+  document.getElementById('carousel-img').src = currentCarouselUrls[index];
+  const counter = document.getElementById('carousel-index');
+  if (counter) counter.textContent = index + 1;
+  document.querySelectorAll('.carousel-thumb').forEach((t, i) => {
+    t.classList.toggle('active', i === index);
+  });
+}
+
+function prevSlide() {
+  const carousel = document.querySelector('.carousel');
+  if (carousel) goToSlide(parseInt(carousel.dataset.index) - 1);
+}
+
+function nextSlide() {
+  const carousel = document.querySelector('.carousel');
+  if (carousel) goToSlide(parseInt(carousel.dataset.index) + 1);
+}
+
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('active');
+}
+
+document.getElementById('modal-overlay').addEventListener('click', (e) => {
+  if (e.target === e.currentTarget) closeModal();
+});
+
+document.getElementById('history-overlay').addEventListener('click', (e) => {
+  if (e.target === e.currentTarget) toggleHistory();
+});
+
+document.getElementById('product-grid').addEventListener('click', (e) => {
+  const card = e.target.closest('.product-card');
+  if (!card) return;
+  const product = card.dataset.product;
+  if (product) openPDP(product);
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeModal();
+    const hist = document.getElementById('history-overlay');
+    if (hist.classList.contains('active')) toggleHistory();
+  }
+  if (e.key === 'ArrowLeft') prevSlide();
+  if (e.key === 'ArrowRight') nextSlide();
+});
+
+loadData();
+</script>
+</body>
+</html>

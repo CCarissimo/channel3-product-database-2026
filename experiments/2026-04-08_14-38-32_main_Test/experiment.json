@@ -1,0 +1,313 @@
+{
+  "name": "main_Test",
+  "timestamp": "2026-04-08_14-38-32",
+  "extraction_model": "google/gemini-2.5-flash-lite",
+  "category_model": "google/gemini-2.0-flash-lite-001",
+  "num_products": 5,
+  "totals": {
+    "api_calls": 20,
+    "input_tokens": 31709,
+    "output_tokens": 4523,
+    "cost": 0.004886875
+  },
+  "breakdown": {
+    "extraction": {
+      "input_tokens": 28720,
+      "output_tokens": 4338,
+      "cost": 0.0046072000000000005
+    },
+    "taxonomy": {
+      "input_tokens": 2989,
+      "output_tokens": 185,
+      "cost": 0.000279675,
+      "total_calls": 15
+    }
+  },
+  "products": [
+    {
+      "file": "ace.html",
+      "product_name": "DeWalt 20V MAX 1/2 in. Brushed Cordless Compact Drill Kit (Battery & Charger)",
+      "category": "Hardware > Tools > Drills > Handheld Power Drills",
+      "num_api_calls": 5,
+      "extraction": {
+        "num_calls": 1,
+        "input_tokens": 11355,
+        "output_tokens": 1011,
+        "cost": 0.0015399,
+        "model": "google/gemini-2.5-flash-lite"
+      },
+      "taxonomy": {
+        "num_calls": 4,
+        "input_tokens": 1010,
+        "output_tokens": 49,
+        "cost": 9.045e-05,
+        "model": "google/gemini-2.0-flash-lite-001"
+      },
+      "total_input_tokens": 12365,
+      "total_output_tokens": 1060,
+      "total_cost": 0.00163035,
+      "calls": [
+        {
+          "model": "google/gemini-2.5-flash-lite",
+          "input_tokens": 11355,
+          "output_tokens": 1011,
+          "reasoning_tokens": 0,
+          "cost": 0.0015399,
+          "step": "product_extraction"
+        },
+        {
+          "model": "google/gemini-2.0-flash-lite-001",
+          "input_tokens": 198,
+          "output_tokens": 11,
+          "reasoning_tokens": 0,
+          "cost": 1.8149999999999997e-05,
+          "step": "category_level_0"
+        },
+        {
+          "model": "google/gemini-2.0-flash-lite-001",
+          "input_tokens": 172,
+          "output_tokens": 11,
+          "reasoning_tokens": 0,
+          "cost": 1.62e-05,
+          "step": "category_level_1"
+        },
+        {
+          "model": "google/gemini-2.0-flash-lite-001",
+          "input_tokens": 513,
+          "output_tokens": 12,
+          "reasoning_tokens": 0,
+          "cost": 4.2075e-05,
+          "step": "category_level_2"
+        },
+        {
+          "model": "google/gemini-2.0-flash-lite-001",
+          "input_tokens": 127,
+          "output_tokens": 15,
+          "reasoning_tokens": 0,
+          "cost": 1.4024999999999999e-05,
+          "step": "category_level_3"
+        }
+      ]
+    },
+    {
+      "file": "adaysmarch.html",
+      "product_name": "Miller Cotton Lyocell Trousers",
+      "category": "Apparel & Accessories > Clothing > Pants",
+      "num_api_calls": 4,
+      "extraction": {
+        "num_calls": 1,
+        "input_tokens": 1328,
+        "output_tokens": 321,
+        "cost": 0.0002612,
+        "model": "google/gemini-2.5-flash-lite"
+      },
+      "taxonomy": {
+        "num_calls": 3,
+        "input_tokens": 461,
+        "output_tokens": 37,
+        "cost": 4.5675e-05,
+        "model": "google/gemini-2.0-flash-lite-001"
+      },
+      "total_input_tokens": 1789,
+      "total_output_tokens": 358,
+      "total_cost": 0.000306875,
+      "calls": [
+        {
+          "model": "google/gemini-2.5-flash-lite",
+          "input_tokens": 1328,
+          "output_tokens": 321,
+          "reasoning_tokens": 0,
+          "cost": 0.0002612,
+          "step": "product_extraction"
+        },
+        {
+          "model": "google/gemini-2.0-flash-lite-001",
+          "input_tokens": 176,
+          "output_tokens": 14,
+          "reasoning_tokens": 0,
+          "cost": 1.74e-05,
+          "step": "category_level_0"
+        },
+        {
+          "model": "google/gemini-2.0-flash-lite-001",
+          "input_tokens": 119,
+          "output_tokens": 11,
+          "reasoning_tokens": 0,
+          "cost": 1.2224999999999999e-05,
+          "step": "category_level_1"
+        },
+        {
+          "model": "google/gemini-2.0-flash-lite-001",
+          "input_tokens": 166,
+          "output_tokens": 12,
+          "reasoning_tokens": 0,
+          "cost": 1.605e-05,
+          "step": "category_level_2"
+        }
+      ]
+    },
+    {
+      "file": "article.html",
+      "product_name": "Pilar Floor Lamp - White Terrazzo",
+      "category": "Home & Garden > Lighting > Lamps",
+      "num_api_calls": 4,
+      "extraction": {
+        "num_calls": 1,
+        "input_tokens": 6615,
+        "output_tokens": 907,
+        "cost": 0.0010243000000000001,
+        "model": "google/gemini-2.5-flash-lite"
+      },
+      "taxonomy": {
+        "num_calls": 3,
+        "input_tokens": 568,
+        "output_tokens": 36,
+        "cost": 5.34e-05,
+        "model": "google/gemini-2.0-flash-lite-001"
+      },
+      "total_input_tokens": 7183,
+      "total_output_tokens": 943,
+      "total_cost": 0.0010777,
+      "calls": [
+        {
+          "model": "google/gemini-2.5-flash-lite",
+          "input_tokens": 6615,
+          "output_tokens": 907,
+          "reasoning_tokens": 0,
+          "cost": 0.0010243000000000001,
+          "step": "product_extraction"
+        },
+        {
+          "model": "google/gemini-2.0-flash-lite-001",
+          "input_tokens": 194,
+          "output_tokens": 13,
+          "reasoning_tokens": 0,
+          "cost": 1.845e-05,
+          "step": "category_level_0"
+        },
+        {
+          "model": "google/gemini-2.0-flash-lite-001",
+          "input_tokens": 205,
+          "output_tokens": 11,
+          "reasoning_tokens": 0,
+          "cost": 1.8674999999999997e-05,
+          "step": "category_level_1"
+        },
+        {
+          "model": "google/gemini-2.0-flash-lite-001",
+          "input_tokens": 169,
+          "output_tokens": 12,
+          "reasoning_tokens": 0,
+          "cost": 1.6275e-05,
+          "step": "category_level_2"
+        }
+      ]
+    },
+    {
+      "file": "llbean.html",
+      "product_name": "Men's Carefree Unshrinkable Tee, Traditional Fit, Henley",
+      "category": "Apparel & Accessories > Clothing > Shirts & Tops",
+      "num_api_calls": 4,
+      "extraction": {
+        "num_calls": 1,
+        "input_tokens": 6192,
+        "output_tokens": 888,
+        "cost": 0.0009744,
+        "model": "google/gemini-2.5-flash-lite"
+      },
+      "taxonomy": {
+        "num_calls": 3,
+        "input_tokens": 647,
+        "output_tokens": 38,
+        "cost": 5.9925e-05,
+        "model": "google/gemini-2.0-flash-lite-001"
+      },
+      "total_input_tokens": 6839,
+      "total_output_tokens": 926,
+      "total_cost": 0.001034325,
+      "calls": [
+        {
+          "model": "google/gemini-2.5-flash-lite",
+          "input_tokens": 6192,
+          "output_tokens": 888,
+          "reasoning_tokens": 0,
+          "cost": 0.0009744,
+          "step": "product_extraction"
+        },
+        {
+          "model": "google/gemini-2.0-flash-lite-001",
+          "input_tokens": 238,
+          "output_tokens": 14,
+          "reasoning_tokens": 0,
+          "cost": 2.205e-05,
+          "step": "category_level_0"
+        },
+        {
+          "model": "google/gemini-2.0-flash-lite-001",
+          "input_tokens": 181,
+          "output_tokens": 11,
+          "reasoning_tokens": 0,
+          "cost": 1.6875e-05,
+          "step": "category_level_1"
+        },
+        {
+          "model": "google/gemini-2.0-flash-lite-001",
+          "input_tokens": 228,
+          "output_tokens": 13,
+          "reasoning_tokens": 0,
+          "cost": 2.1e-05,
+          "step": "category_level_2"
+        }
+      ]
+    },
+    {
+      "file": "nike.html",
+      "product_name": "Nike Air Force 1 '07 LV8 Men's Shoes",
+      "category": "Apparel & Accessories > Shoes",
+      "num_api_calls": 3,
+      "extraction": {
+        "num_calls": 1,
+        "input_tokens": 3230,
+        "output_tokens": 1211,
+        "cost": 0.0008074,
+        "model": "google/gemini-2.5-flash-lite"
+      },
+      "taxonomy": {
+        "num_calls": 2,
+        "input_tokens": 303,
+        "output_tokens": 25,
+        "cost": 3.0225e-05,
+        "model": "google/gemini-2.0-flash-lite-001"
+      },
+      "total_input_tokens": 3533,
+      "total_output_tokens": 1236,
+      "total_cost": 0.000837625,
+      "calls": [
+        {
+          "model": "google/gemini-2.5-flash-lite",
+          "input_tokens": 3230,
+          "output_tokens": 1211,
+          "reasoning_tokens": 0,
+          "cost": 0.0008074,
+          "step": "product_extraction"
+        },
+        {
+          "model": "google/gemini-2.0-flash-lite-001",
+          "input_tokens": 180,
+          "output_tokens": 14,
+          "reasoning_tokens": 0,
+          "cost": 1.77e-05,
+          "step": "category_level_0"
+        },
+        {
+          "model": "google/gemini-2.0-flash-lite-001",
+          "input_tokens": 123,
+          "output_tokens": 11,
+          "reasoning_tokens": 0,
+          "cost": 1.2525e-05,
+          "step": "category_level_1"
+        }
+      ]
+    }
+  ]
+}

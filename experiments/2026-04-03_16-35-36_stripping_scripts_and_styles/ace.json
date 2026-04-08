@@ -1,0 +1,94 @@
+{
+  "product": {
+    "name": "DeWalt 20V MAX 1/2 in. Brushed Cordless Compact Drill Kit (Battery & Charger)",
+    "price": {
+      "price": 159.0,
+      "currency": "USD",
+      "compare_at_price": 159.0
+    },
+    "description": "The DCD771C2 20V MAX Lithium Ion Compact Drill/Driver Kit is lightweight and compact for working in tight spaces for long periods of time. High-speed transmission delivers 2-Speed variations allowing users to choose the level of performance needed for various applications.Find the 20V MX DRL DRVR 1/2 2BAT at Ace.",
+    "key_features": [
+      "Lightweight and compact for working in tight spaces for long periods of time.",
+      "High-speed transmission delivers 2-Speed variations allowing users to choose the level of performance needed for various applications."
+    ],
+    "image_urls": [
+      "//cdn-tp6.mozu.com/24645-37138/cms/37138/files/f7b42b30-cf5a-4829-be02-76bf93727867?quality=60&max=480&_mzcb=_1767877756410",
+      "//cdn-tp6.mozu.com/24645-37138/cms/37138/files/b9e63a53-01c5-44c6-97e2-9c78a7ed2a10?quality=60&_mzcb=_1767877756410",
+      "//cdn-tp6.mozu.com/24645-37138/cms/37138/files/373f3cb5-5ecf-4a57-b7d6-510d8698e977?quality=60&_mzcb=_1767877756410",
+      "//cdn-tp6.mozu.com/24645-37138/cms/37138/files/9e7c188d-d2b8-4217-b5f8-48b29fd445b1?quality=60&_mzcb=_1767877756410",
+      "//cdn-tp6.mozu.com/24645-37138/cms/37138/files/f27d0a21-766f-4f84-9927-30cf76b27188?quality=60&_mzcb=_1767877756410",
+      "//cdn-tp6.mozu.com/24645-37138/cms/37138/files/1b434a2e-7528-42cc-a489-83177395594b?quality=60&_mzcb=_1767877756410",
+      "//cdn-tp6.mozu.com/24645-37138/cms/37138/files/bb222bcf-a069-4d02-b9d9-f23410f64138?quality=60&_mzcb=_1767877756410",
+      "//cdn-tp6.mozu.com/24645-37138/cms/37138/files/028f1d30-dca3-4b44-84ef-40a6f3b149e8?quality=60&_mzcb=_1767877756410"
+    ],
+    "video_url": null,
+    "category": {
+      "name": "Hardware > Tools > Drills > Handheld Power Drills"
+    },
+    "brand": "DEWALT",
+    "colors": [],
+    "variants": []
+  },
+  "metrics": {
+    "extraction": {
+      "num_calls": 1,
+      "input_tokens": 42603,
+      "output_tokens": 1022,
+      "cost": 0.004669100000000001,
+      "model": "google/gemini-2.5-flash-lite"
+    },
+    "taxonomy": {
+      "num_calls": 4,
+      "input_tokens": 1126,
+      "output_tokens": 49,
+      "cost": 9.914999999999998e-05,
+      "model": "google/gemini-2.0-flash-lite-001"
+    },
+    "total_input_tokens": 43729,
+    "total_output_tokens": 1071,
+    "total_cost": 0.004768250000000001,
+    "num_api_calls": 5,
+    "calls": [
+      {
+        "model": "google/gemini-2.5-flash-lite",
+        "input_tokens": 42603,
+        "output_tokens": 1022,
+        "reasoning_tokens": 0,
+        "cost": 0.004669100000000001,
+        "step": "product_extraction"
+      },
+      {
+        "model": "google/gemini-2.0-flash-lite-001",
+        "input_tokens": 227,
+        "output_tokens": 11,
+        "reasoning_tokens": 0,
+        "cost": 2.0324999999999996e-05,
+        "step": "category_level_0"
+      },
+      {
+        "model": "google/gemini-2.0-flash-lite-001",
+        "input_tokens": 201,
+        "output_tokens": 11,
+        "reasoning_tokens": 0,
+        "cost": 1.8375e-05,
+        "step": "category_level_1"
+      },
+      {
+        "model": "google/gemini-2.0-flash-lite-001",
+        "input_tokens": 542,
+        "output_tokens": 12,
+        "reasoning_tokens": 0,
+        "cost": 4.424999999999999e-05,
+        "step": "category_level_2"
+      },
+      {
+        "model": "google/gemini-2.0-flash-lite-001",
+        "input_tokens": 156,
+        "output_tokens": 15,
+        "reasoning_tokens": 0,
+        "cost": 1.62e-05,
+        "step": "category_level_3"
+      }
+    ]
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "product": {
+    "name": "Miller Cotton Lyocell Trousers",
+    "price": {
+      "price": 170.0,
+      "currency": "USD",
+      "compare_at_price": null
+    },
+    "description": "Trousers made from a blend of TENCEL\u2122 Lyocell and cotton. Features include a visible button and an inside button, topstitching at the waistband, side pockets, and two back pockets with buttoning. Crafted in Portugal.",
+    "key_features": [
+      "65% TENCEL\u2122 Lyocell, 35% cotton",
+      "One visible button and one button inside",
+      "Topstitch at waistband",
+      "Side pockets",
+      "Two back pockets with buttoning"
+    ],
+    "image_urls": [
+      "https://adaysmarch.centracdn.net/client/dynamic/images/8521_d363c12cd7-miller-cotton-lyocell-iron.jpg"
+    ],
+    "video_url": null,
+    "category": {
+      "name": "Apparel & Accessories > Clothing > Pants"
+    },
+    "brand": "A Day's March",
+    "colors": [],
+    "variants": [
+      {
+        "name": "Size",
+        "options": [
+          "44",
+          "46",
+          "48",
+          "50",
+          "52",
+          "54"
+        ]
+      }
+    ]
+  },
+  "metrics": {
+    "extraction": {
+      "num_calls": 1,
+      "input_tokens": 1328,
+      "output_tokens": 328,
+      "cost": 0.000264,
+      "model": "google/gemini-2.5-flash-lite"
+    },
+    "taxonomy": {
+      "num_calls": 3,
+      "input_tokens": 473,
+      "output_tokens": 37,
+      "cost": 4.6575e-05,
+      "model": "google/gemini-2.0-flash-lite-001"
+    },
+    "total_input_tokens": 1801,
+    "total_output_tokens": 365,
+    "total_cost": 0.000310575,
+    "num_api_calls": 4,
+    "calls": [
+      {
+        "model": "google/gemini-2.5-flash-lite",
+        "input_tokens": 1328,
+        "output_tokens": 328,
+        "reasoning_tokens": 0,
+        "cost": 0.000264,
+        "step": "product_extraction"
+      },
+      {
+        "model": "google/gemini-2.0-flash-lite-001",
+        "input_tokens": 180,
+        "output_tokens": 14,
+        "reasoning_tokens": 0,
+        "cost": 1.77e-05,
+        "step": "category_level_0"
+      },
+      {
+        "model": "google/gemini-2.0-flash-lite-001",
+        "input_tokens": 123,
+        "output_tokens": 11,
+        "reasoning_tokens": 0,
+        "cost": 1.2525e-05,
+        "step": "category_level_1"
+      },
+      {
+        "model": "google/gemini-2.0-flash-lite-001",
+        "input_tokens": 170,
+        "output_tokens": 12,
+        "reasoning_tokens": 0,
+        "cost": 1.635e-05,
+        "step": "category_level_2"
+      }
+    ]
+  }
+}

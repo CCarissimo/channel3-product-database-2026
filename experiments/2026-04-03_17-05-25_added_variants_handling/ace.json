@@ -1,0 +1,96 @@
+{
+  "product": {
+    "name": "DeWalt 20V MAX 1/2 in. Brushed Cordless Compact Drill Kit (Battery & Charger)",
+    "price": {
+      "price": 159.0,
+      "currency": "USD",
+      "compare_at_price": 129.0
+    },
+    "description": "The DeWalt 20V MAX 1/2 in. Brushed Cordless Compact Drill Kit is a powerful and versatile tool for various drilling and fastening applications. Its compact and lightweight design makes it easy to handle in tight spaces, while the 20V MAX battery system provides long-lasting power. This kit includes the drill, a battery, and a charger, offering great value for DIY enthusiasts and professionals alike.",
+    "key_features": [
+      "1/2 inch brushless cordless compact drill",
+      "20V MAX battery system for ample power",
+      "Compact and lightweight design for maneuverability",
+      "Includes drill, battery, and charger"
+    ],
+    "image_urls": [
+      "https://www.acehardware.com/images/product/6427981_1_large.jpg",
+      "https://www.acehardware.com/images/product/6427981_2_large.jpg",
+      "https://www.acehardware.com/images/product/6427981_3_large.jpg",
+      "https://www.acehardware.com/images/product/6427981_4_large.jpg",
+      "https://www.acehardware.com/images/product/6427981_5_large.jpg",
+      "https://www.acehardware.com/images/product/6427981_6_large.jpg",
+      "https://www.acehardware.com/images/product/6427981_7_large.jpg",
+      "https://www.acehardware.com/images/product/6427981_8_large.jpg"
+    ],
+    "video_url": null,
+    "category": {
+      "name": "Hardware > Tools > Drills > Handheld Power Drills"
+    },
+    "brand": "DEWALT",
+    "colors": [],
+    "variants": []
+  },
+  "metrics": {
+    "extraction": {
+      "num_calls": 1,
+      "input_tokens": 3910,
+      "output_tokens": 510,
+      "cost": 0.000595,
+      "model": "google/gemini-2.5-flash-lite"
+    },
+    "taxonomy": {
+      "num_calls": 4,
+      "input_tokens": 1150,
+      "output_tokens": 49,
+      "cost": 0.00010094999999999999,
+      "model": "google/gemini-2.0-flash-lite-001"
+    },
+    "total_input_tokens": 5060,
+    "total_output_tokens": 559,
+    "total_cost": 0.0006959500000000001,
+    "num_api_calls": 5,
+    "calls": [
+      {
+        "model": "google/gemini-2.5-flash-lite",
+        "input_tokens": 3910,
+        "output_tokens": 510,
+        "reasoning_tokens": 0,
+        "cost": 0.000595,
+        "step": "product_extraction"
+      },
+      {
+        "model": "google/gemini-2.0-flash-lite-001",
+        "input_tokens": 233,
+        "output_tokens": 11,
+        "reasoning_tokens": 0,
+        "cost": 2.0774999999999997e-05,
+        "step": "category_level_0"
+      },
+      {
+        "model": "google/gemini-2.0-flash-lite-001",
+        "input_tokens": 207,
+        "output_tokens": 11,
+        "reasoning_tokens": 0,
+        "cost": 1.8824999999999997e-05,
+        "step": "category_level_1"
+      },
+      {
+        "model": "google/gemini-2.0-flash-lite-001",
+        "input_tokens": 548,
+        "output_tokens": 12,
+        "reasoning_tokens": 0,
+        "cost": 4.4699999999999996e-05,
+        "step": "category_level_2"
+      },
+      {
+        "model": "google/gemini-2.0-flash-lite-001",
+        "input_tokens": 162,
+        "output_tokens": 15,
+        "reasoning_tokens": 0,
+        "cost": 1.665e-05,
+        "step": "category_level_3"
+      }
+    ]
+  }
+}

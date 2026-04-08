@@ -1,0 +1,109 @@
+{
+  "product": {
+    "name": "Men's Carefree Unshrinkable Tee, Traditional Fit, Henley",
+    "price": {
+      "price": 29.95,
+      "currency": "USD",
+      "compare_at_price": null
+    },
+    "description": "Made of soft cotton that resists wrinkles, shrinking, fading and pilling, our resilient henley keeps its shape wash after wash.",
+    "key_features": [
+      "Traditional Fit: Relaxed through the chest, sleeve and waist.",
+      "Made of soft cotton that resists wrinkles, shrinking, fading and pilling, our resilient henley keeps its shape wash after wash.",
+      "Ribbed trim is 90% cotton/10% Lycra\u00ae elastane.",
+      "100% jersey-knit cotton.",
+      "Double ring-spun fabric fights shrinkage, wrinkles, fading and pilling.",
+      "Durable double-needle stitching.",
+      "Straight hem can be worn tucked or untucked.",
+      "Comfortable enough for everyday wear.",
+      "Tagless printed label for comfort."
+    ],
+    "image_urls": [
+      "https://www.llbean.com/images/products/media/product-images/060/797/060797/060797_4047_alt1.jpg",
+      "https://www.llbean.com/images/products/media/product-images/060/797/060797/060797_4047_alt2.jpg",
+      "https://www.llbean.com/images/products/media/product-images/060/797/060797/060797_4047_alt3.jpg",
+      "https://www.llbean.com/images/products/media/product-images/060/797/060797/060797_4047_alt4.jpg",
+      "https://www.llbean.com/images/products/media/product-images/060/797/060797/060797_4047_alt5.jpg",
+      "https://www.llbean.com/images/products/media/product-images/060/797/060797/060797_4047_alt6.jpg"
+    ],
+    "video_url": null,
+    "category": {
+      "name": "Apparel & Accessories > Clothing > Shirts & Tops"
+    },
+    "brand": "L.L.Bean",
+    "colors": [
+      "Charcoal Heather",
+      "Navy",
+      "Blue",
+      "Burgundy",
+      "Green",
+      "Gray",
+      "White",
+      "Black"
+    ],
+    "variants": [
+      "Small",
+      "Medium",
+      "Large",
+      "X-Large",
+      "XX-Large",
+      "XXX-Large",
+      "Regular",
+      "Tall"
+    ]
+  },
+  "metrics": {
+    "extraction": {
+      "num_calls": 1,
+      "input_tokens": 3129,
+      "output_tokens": 709,
+      "cost": 0.0005965,
+      "model": "google/gemini-2.5-flash-lite"
+    },
+    "taxonomy": {
+      "num_calls": 3,
+      "input_tokens": 425,
+      "output_tokens": 38,
+      "cost": 4.3274999999999995e-05,
+      "model": "google/gemini-2.0-flash-lite-001"
+    },
+    "total_input_tokens": 3554,
+    "total_output_tokens": 747,
+    "total_cost": 0.000639775,
+    "num_api_calls": 4,
+    "calls": [
+      {
+        "model": "google/gemini-2.5-flash-lite",
+        "input_tokens": 3129,
+        "output_tokens": 709,
+        "reasoning_tokens": 0,
+        "cost": 0.0005965,
+        "step": "product_extraction"
+      },
+      {
+        "model": "google/gemini-2.0-flash-lite-001",
+        "input_tokens": 164,
+        "output_tokens": 14,
+        "reasoning_tokens": 0,
+        "cost": 1.6499999999999998e-05,
+        "step": "category_level_0"
+      },
+      {
+        "model": "google/gemini-2.0-flash-lite-001",
+        "input_tokens": 107,
+        "output_tokens": 11,
+        "reasoning_tokens": 0,
+        "cost": 1.1325e-05,
+        "step": "category_level_1"
+      },
+      {
+        "model": "google/gemini-2.0-flash-lite-001",
+        "input_tokens": 154,
+        "output_tokens": 13,
+        "reasoning_tokens": 0,
+        "cost": 1.545e-05,
+        "step": "category_level_2"
+      }
+    ]
+  }
+}

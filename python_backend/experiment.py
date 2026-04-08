@@ -2,7 +2,7 @@ import json
 from datetime import datetime
 from pathlib import Path
 
-from extraction import extract_product, EXTRACTION_MODEL, CATEGORY_MODEL
+from .extraction import extract_product, EXTRACTION_MODEL, CATEGORY_MODEL
 
 EXPERIMENTS_DIR = Path("./experiments")
 SUMMARY_FILE = EXPERIMENTS_DIR / "summary.json"

@@ -39,7 +39,7 @@ def print_breakdown(name: str, breakdown: dict):
 
 def deep_analysis(html: str) -> dict:
     """Analyse what remains after stripping scripts and styles."""
-    from html_preprocessing import strip_scripts_and_styles
+    from .html_preprocessing import strip_scripts_and_styles
     cleaned = strip_scripts_and_styles(html)
 
     # HTML comments

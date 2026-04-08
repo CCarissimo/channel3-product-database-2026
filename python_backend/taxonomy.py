@@ -3,8 +3,8 @@ import json
 import os
 from pathlib import Path
 
-CATEGORIES_FILE = Path(__file__).parent / "categories.txt"
-TREE_CACHE_FILE = Path(__file__).parent / "taxonomy_tree.json"
+CATEGORIES_FILE = Path(__file__).parent.parent / "categories.txt"
+TREE_CACHE_FILE = Path(__file__).parent.parent / "taxonomy_tree.json"
 
 
 def build_tree(filepath: Path) -> dict:

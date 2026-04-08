@@ -3,7 +3,7 @@ from pathlib import Path
 from pydantic import BaseModel, field_validator
 
 # Load categories once at module level
-CATEGORIES_FILE = Path(__file__).parent / "categories.txt"
+CATEGORIES_FILE = Path(__file__).parent.parent / "categories.txt"
 VALID_CATEGORIES = set()
 if CATEGORIES_FILE.exists():
     with open(CATEGORIES_FILE, "r") as f:

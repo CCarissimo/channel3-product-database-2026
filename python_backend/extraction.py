@@ -1,8 +1,8 @@
-import ai
+from . import ai
 from pydantic import BaseModel
-from models import FirstQueryProduct, Product, Category
-from taxonomy import load_or_build_tree
-from html_preprocessing import preprocess
+from .models import FirstQueryProduct, Product, Category
+from .taxonomy import load_or_build_tree
+from .html_preprocessing import preprocess
 
 CATEGORY_MODEL = "google/gemini-2.0-flash-lite-001"
 EXTRACTION_MODEL = "google/gemini-2.5-flash-lite"

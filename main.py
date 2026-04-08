@@ -3,7 +3,7 @@ import asyncio
 import logging
 from pathlib import Path
 
-from experiment import run_experiment
+from python_backend.experiment import run_experiment
 
 
 async def main():

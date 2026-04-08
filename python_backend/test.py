@@ -2,7 +2,7 @@ import asyncio
 import logging
 from pathlib import Path
 
-from experiment import run_experiment
+from .experiment import run_experiment
 
 
 async def main():
